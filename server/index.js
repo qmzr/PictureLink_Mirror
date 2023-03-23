@@ -1,4 +1,5 @@
 'use strict';
+// you might use a socket https://socket.io/docs/v4/
 
 const 
 express = require('express'),
