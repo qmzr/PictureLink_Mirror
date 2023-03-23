@@ -1,0 +1,18 @@
+{
+  "name": "protopnet",
+  "version": "1.0.0",
+  "description": "This server responds to API calls to get outputs from ProtopNet Model",
+  "main": "index.js",
+  "scripts": {
+    "debug": "nodemon --trace-warnings ./index.js",
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oluwaseun Cardoso (FastNFuriousProgrammers)",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21"
+  }
+}
