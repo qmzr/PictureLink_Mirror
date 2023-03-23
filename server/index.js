@@ -8,7 +8,8 @@ app.get("/", function(req, res){
     res.send("Hello, world!");
 });
 
-app.get("/okay", function(req, res){
+app.post("/image", function(req, res){
+    console.log(`request: ${req}`);
     res.send("We gucci!");
 });
 
