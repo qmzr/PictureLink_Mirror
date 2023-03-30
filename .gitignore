@@ -1,5 +1,5 @@
 ./server/node_modules/
-./server/practice/
+server/practice/
 ./*/.DS_Store 
 */.DS_Store 
 .gitignore
