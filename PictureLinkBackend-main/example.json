@@ -1,0 +1,30 @@
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "isAlive": true,
+  "age": 27,
+  "classes": {
+    "class1": 
+    {
+    },
+    "class2": "New York",
+    "class3": "NY",
+    "class4": "10021-3100"
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "212 555-1234"
+    },
+    {
+      "type": "office",
+      "number": "646 555-4567"
+    }
+  ],
+  "children": [
+      "Catherine",
+      "Thomas",
+      "Trevor"
+  ],
+  "spouse": null
+}
