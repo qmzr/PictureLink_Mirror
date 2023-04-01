@@ -1,0 +1,41 @@
+I want you to take this JSON and populate it with appropriate values. I will provide you with that json and the policy you should follow for populating the values. Here is the JSON:
+
+{
+    "top_10_classes":[ {"class_name" : "", class_number : 0, score: 0,logit: 0 }],
+    "top_10_prototypes": [ { "coordinates: [] } ]
+}
+
+Here is the policy for populating the value for the key "top_10_classes":
+1. The array associated with key "top_10_classes" should contain 10 elements.
+2. Each elements of the array should be a json that is of the form: {"class_name" : "", class_number : 0, score: 0,logit: 0}
+3. Choose a random bird name and it's corresponding class number from the CUB-200-2011 dataset.
+4. Set the value of the key "class_name" and "class_number" to the chosen bird name and it's corresponding class name, respectively
+5. Set the value of the key "score" to a random number from 0 to 100
+6. Set the value of the key "logit" to a random number from -100 to 1000
+7. Set the value of the key "probability" to a random decimal number from 0.00 to 1.00. 
+8. Lastly make sure that all the values associated with the key "probability" sums up to 1.
+
+Here is the policy for populating the value for the key "top_10_prototypes":
+1. The array associated with key "top_10_prototypes" should contain 1 elements.
+2. Each element of the array should be a json that is of the form: { "coordinates": [] }
+3. Set the value of the key "coordinates" to a list of 10 elements. Let each element of the list be a list of 4 random numbers from 0 to 10 each.
+
+
+PictureLinkBackend-main/theImages/vgg19/004/50_19push0.0986.pth/top-1_class_prototypes
+
+"top_10_prototypes": [{ "image_address_name": "", pairs: { "coordinates: [],"address : [] } }]
+
+
+{
+    "top_10_classes":[ {"class_name" : "", class_number : 0, score: 0,logit: 0 }],
+    "top_10_prototypes": [ { "coordinates: [],"address : [] } ]
+}
+
+{
+    "top_10_classes":[ {"class_name" : "", class_number : 0, score: 0,logit: 0 , prototype_image_address: [] , original_image_address:[]}],
+    "top_10_prototypes": [ { "coordinates: [],"address : [] } ]
+}
+
+
+7. Set the value of the key "prototype_image_address" to a list of 10 elements. Let each element of the list be a string of the form 'top-X_activated_prototype_in_original_pimg.png', where X is index of the string in the list
+8. Set the value of the key "prototype_image_address" to a list of 10 elements. Let each element of the list be a string of the form 'most_highly_activated_patch_in_original_img_by_top-X_prototype.png', where X is index of the string in the list
