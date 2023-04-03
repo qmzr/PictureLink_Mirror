@@ -11,7 +11,11 @@ var response = {
             "class_number": 9,
             "score": 42,
             "logit": 754,
-            "probability": 0.12
+            "probability": 0.12,
+            // prototypes: {
+            //     test_images: ["url"],
+            //     protoype_image: ["url"]
+            // }
         },
         {
             "class_name": "Snowy Egret",

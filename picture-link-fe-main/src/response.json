@@ -1,0 +1,184 @@
+{
+  "top_10_classes": [
+      {
+        "class_name": "Red-winged Blackbird",
+        "class_number": 9,
+        "score": 42,
+        "logit": 754,
+        "probability": 0.12,
+        "top_class": 1,
+        "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-1_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Snowy Egret",
+          "class_number": 11,
+          "score": 88,
+          "logit": -33,
+          "probability": 0.05,
+          "top_class": 2,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-2_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Bald Eagle",
+          "class_number": 2,
+          "score": 77,
+          "logit": 221,
+          "probability": 0.14,
+          "top_class": 3,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-3_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Common Tern",
+          "class_number": 27,
+          "score": 18,
+          "logit": 502,
+          "probability": 0.06,
+          "top_class": 4,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-4_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Barn Swallow",
+          "class_number": 8,
+          "score": 55,
+          "logit": 301,
+          "probability": 0.08,
+          "top_class": 5,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-5_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Great Egret",
+          "class_number": 10,
+          "score": 31,
+          "logit": 466,
+          "probability": 0.03,
+          "top_class": 6,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-6_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Chestnut-sided Warbler",
+          "class_number": 38,
+          "score": 14,
+          "logit": -60,
+          "probability": 0.17,
+          "top_class": 7,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-7_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Pigeon Guillemot",
+          "class_number": 134,
+          "score": 93,
+          "logit": 722,
+          "probability": 0.10,
+          "top_class": 8,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-8_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Magnolia Warbler",
+          "class_number": 37,
+          "score": 61,
+          "logit": 861,
+          "probability": 0.11,
+          "top_class": 9,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-9_activated_prototype_in_original_pimg.png"
+      },
+      {
+          "class_name": "Mourning Dove",
+          "class_number": 92,
+          "score": 22,
+          "logit": 442,
+          "probability": 0.14,
+          "top_class": 10,
+          "images": {
+            "test_image_patches": ["/images/top-1_class_prototypes/most_highly_activated_patch_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_by_top-2_prototype.png"],
+            "prototypes": ["/images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-1_prototype.png",
+            "images/top-1_class_prototypes/most_highly_activated_patch_in_original_img_by_top-2_prototype.png"]
+        },
+        "prototype_patch_image_url":"images/most_activated_prototypes/top-10_activated_prototype_in_original_pimg.png"
+      }
+  ],
+  "top_10_prototypes": [
+      {
+          "coordinates": [
+            [0, 44, 54, 120],
+            [47, 224, 4, 224],
+            [25, 79, 45, 172],
+            [0, 42, 72, 144],
+            [45, 224, 182, 224],
+            [177, 224, 54, 113],
+            [0, 45, 12, 80],
+            [55, 176, 121, 172],
+            [23, 81, 115, 168],
+            [51, 105, 84, 139]
+          ]
+
+
+      }
+  ],
+  "path": {
+      "url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/004/50_19push0.0986.pth/",
+      "top_prototypes": {
+          "folder": "most_activated_prototypes/",
+          "name_of_file": "top-X_activated_prototype_in_original_pimg.png"
+      },
+      "reasoning":{
+          "folder": "top-1_class_prototypes",
+          "original_image": "most_highly_activated_patch_in_original_img_by_top-X_prototype.png",
+          "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
+      }
+  }
+}

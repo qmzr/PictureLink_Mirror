@@ -11,13 +11,13 @@ export function Upload(props){
 
     // upload to backend
     onChange(e.target.files[0])
-     fetch("http://localhost:8080/image", {
-      method: 'POST',
-      body: form,
-      headers: new Headers({
-      }),
-    })
-    .then(()=> {})
+    // fetch("http://localhost:8080/image", {
+    //   method: 'POST',
+    //   body: form,
+    //   headers: new Headers({
+    //   }),
+    // })
+    // .then(()=> {})
   }
 
   return(

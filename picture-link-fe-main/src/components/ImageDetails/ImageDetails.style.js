@@ -8,6 +8,8 @@ export const Content = styled.div`
 `
 
 
+let height = 200
+
 export const Container = styled.div`
   background: #fff;
   border-radius: 0.2rem;
@@ -15,8 +17,19 @@ export const Container = styled.div`
   grid-template-columns: 5fr 2fr;
   padding: 1rem;
 
+  border: 1px solid red;
+
+
+  > div:nth-child(2) {
+    height: ${p => height}px;
+    width: ${p => p.aspectRatio * height}px;
+    position: relative;
+  }
+
+
   img {
-    min-width: 260px;
+    width: 100%;
+    height: 100%;
   }
 `
 
@@ -48,6 +61,18 @@ export const ImageConfidence = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-  width: 16.5rem;
-  height: 20.6rem;
+  // width: 16.5rem;
+  // height: 20.6rem;
+  width: 224px;
+  height: 224px;
+`
+export const Marker = styled.div`
+  position: absolute;
+  top: ${p => p.x}px;
+  left: ${p => p.y}px;
+  width: ${p => p.width}px;
+  height: ${p => p.height}px;
+  border: 2px solid yellow;
+
+  ${p => p.selected && `border-color: green;`}
 `
