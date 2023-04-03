@@ -10,7 +10,7 @@ Here is the policy for populating the value for the key "top_10_classes":
 2. Each elements of the array should be a json that is of the form: {class_name : "", class_number : 0, score: 0,logit: 0, probability: 0 }
 3. Choose a random bird name and it's corresponding class number from the CUB-200-2011 dataset.
 4. Set the value of the key "class_name" and "class_number" to the chosen bird name and it's corresponding class name, respectively
-5. Set the value of the key "score" to a random number from 0 to 100
+5. Set the value of the key "score" to a list that contain random numbers from 0 to 100
 6. Set the value of the key "logit" to a random number from -100 to 1000
 7. Set the value of the key "probability" to a random decimal number from 0.00 to 1.00. 
 8. Lastly make sure that all the values associated with the key "probability" sums up to 1.

@@ -25,13 +25,13 @@ from preprocess import mean, std, preprocess_input_function, undo_preprocess_inp
 import argparse
 
 f = open("coordinates.txt", "w")
-
+f2 = open("coordinates2.txt", "w")
 device = torch.device("mps")
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-gpuid', nargs=1, type=str, default='0')
-parser.add_argument('-modeldir', nargs=1, type=str, default='./saved_models_2/vgg19/004/')
-parser.add_argument('-model', nargs=1, type=str, default='50_19push0.0986.pth')
+parser.add_argument('-modeldir', nargs=1, type=str, default='./saved_models_3/vgg19/005/')
+parser.add_argument('-model', nargs=1, type=str, default='50_19push0.1070.pth')
 parser.add_argument('-imgdir', nargs=1, type=str, default='./theImages')
 parser.add_argument('-img', nargs=1, type=str, default='a.jpg')
 parser.add_argument('-imgclass', nargs=1, type=int, default=0)
@@ -49,6 +49,10 @@ test_image_dir = args.imgdir #'./local_analysis/Painted_Bunting_Class15_0081/'
 test_image_name = args.img #'Painted_Bunting_0081_15230.jpg'
 test_image_label = args.imgclass #15
 
+print (test_image_dir[0])
+print (test_image_name[0])
+test_image_dir = test_image_dir[0]
+test_image_name = test_image_name[0]
 test_image_path = os.path.join(test_image_dir, test_image_name)
 
 # load the model
@@ -145,7 +149,7 @@ def save_preprocessed_img(fname, preprocessed_imgs, index=0):
     
     plt.imsave(fname, undo_preprocessed_img)
     return undo_preprocessed_img
-
+"most_highly_activated_patch_in_original_img_by_top-9_prototype.png"
 def save_prototype(fname, epoch, index):
     p_img = plt.imread(os.path.join(load_img_dir, 'epoch-'+str(epoch), 'prototype-img'+str(index)+'.png'))
     #plt.axis('off')
@@ -234,6 +238,10 @@ for i in range(1,11):
                                           bbox_width_start=prototype_info[sorted_indices_act[-i].item()][3],
                                           bbox_width_end=prototype_info[sorted_indices_act[-i].item()][4],
                                           color=(0, 255, 255))
+
+    f2.write(str(prototype_info[sorted_indices_act[-i].item()][1]) + " " + str(prototype_info[sorted_indices_act[-i].item()][2]) +
+            " " + str(prototype_info[sorted_indices_act[-i].item()][3]) + " " + str(prototype_info[sorted_indices_act[-i].item()][4]) + "\n")
+
     save_prototype_self_activation(os.path.join(save_analysis_path, 'most_activated_prototypes',
                                                 'top-%d_activated_prototype_self_act.png' % i),
                                    start_epoch_number, sorted_indices_act[-i].item())
@@ -252,11 +260,14 @@ for i in range(1,11):
     high_act_patch_indices = find_high_activation_crop(upsampled_activation_pattern)
     high_act_patch = original_img[high_act_patch_indices[0]:high_act_patch_indices[1],
                                   high_act_patch_indices[2]:high_act_patch_indices[3], :]
+
+
     log('most highly activated patch of the chosen image by this prototype:')
     #plt.axis('off')
     plt.imsave(os.path.join(save_analysis_path, 'most_activated_prototypes',
                             'most_highly_activated_patch_by_top-%d_prototype.png' % i),
                high_act_patch)
+
     log('most highly activated patch by this prototype shown in the original image:')
     imsave_with_bbox(fname=os.path.join(save_analysis_path, 'most_activated_prototypes',
                             'most_highly_activated_patch_in_original_img_by_top-%d_prototype.png' % i),
@@ -266,6 +277,9 @@ for i in range(1,11):
                      bbox_width_start=high_act_patch_indices[2],
                      bbox_width_end=high_act_patch_indices[3], color=(0, 255, 255))
     
+    f.write(' '.join(str(x) for x in high_act_patch_indices))
+    f.write("\n")
+
     # show the image overlayed with prototype activation map
     rescaled_activation_pattern = upsampled_activation_pattern - np.amin(upsampled_activation_pattern)
     rescaled_activation_pattern = rescaled_activation_pattern / np.amax(rescaled_activation_pattern)
@@ -281,7 +295,7 @@ for i in range(1,11):
     log('--------------------------------------------------------------')
 
 ##### PROTOTYPES FROM TOP-k CLASSES
-k = 50
+k = 10
 log('Prototypes from top-%d classes:' % k)
 topk_logits, topk_classes = torch.topk(logits[idx], k=k)
 #
@@ -346,8 +360,8 @@ for i,c in enumerate(topk_classes.detach().cpu().numpy()):
         
         #####
         
-        f.write(' '.join(str(x) for x in high_act_patch_indices))
-        f.write("\n")
+        # f.write(' '.join(str(x) for x in high_act_patch_indices))
+        # f.write("\n")
         
         #####
 
@@ -374,3 +388,4 @@ else:
 
 logclose()
 f.close()
+f2.close()

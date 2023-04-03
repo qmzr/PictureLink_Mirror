@@ -4,7 +4,7 @@ export const Container = styled.div`
   background: #fff;
   color: #000;
 
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
   padding: 1rem;
 `
@@ -21,9 +21,9 @@ export const TotalScore = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1rem;
+  // display: grid;
+  // grid-template-rows: repeat(3, 1fr);
+  // gap: 1rem;
 `
 
 export const Row = styled.div`

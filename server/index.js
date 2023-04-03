@@ -12,7 +12,7 @@ var response = {
         {
             "class_name": "Red-winged Blackbird",
             "class_number": 9,
-            "score": 42,
+            "scores": [42, 34, 23, 13,422, ],
             "logit": 754,
             "probability": 0.12,
             // prototypes: {
@@ -23,28 +23,28 @@ var response = {
         {
             "class_name": "Snowy Egret",
             "class_number": 11,
-            "score": 88,
+            "scores": 88,
             "logit": -33,
             "probability": 0.05
         },
         {
             "class_name": "Bald Eagle",
             "class_number": 2,
-            "score": 77,
+            "scores": 77,
             "logit": 221,
             "probability": 0.14
         },
         {
             "class_name": "Common Tern",
             "class_number": 27,
-            "score": 18,
+            "scores": 18,
             "logit": 502,
             "probability": 0.06
         },
         {
             "class_name": "Barn Swallow",
             "class_number": 8,
-            "score": 55,
+            "scores": 55,
             "logit": 301,
             "probability": 0.08
         },
@@ -107,11 +107,14 @@ var response = {
             "name_of_file": "top-X_activated_prototype_in_original_pimg.png"
         },
         "reasoning":{
-            "folder": "top-1_class_prototypes",
+            "folder": "top-X_class_prototypes",
             "original_image": "most_highly_activated_patch_in_original_img_by_top-X_prototype.png",
             "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
-        }
+        },
+        "resized_original_image":"original_img.png"
     }
+
+    // send total classes/ send number of patches send Total images// 
 }
 
 app.use(cors());
