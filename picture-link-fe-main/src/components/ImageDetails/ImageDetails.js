@@ -16,10 +16,6 @@ export function ImageDetails(props){
 
  const selectedCoordinate = selectedItem >= coordinates.length ? null : (coordinates || [])[selectedItem]
 
-//  useEffect(() => {
-//   console.log(ref.current.clientWidth, ref.current.clientHeight, 'ssssssssss')
-//  }, [src])
-
  return (
    <Container aspectRatio={aspectRatio}>
     <Content>
@@ -32,8 +28,8 @@ export function ImageDetails(props){
     <ImagePreview src={src} ref={ref}>
       {
         selectedCoordinate &&  <Marker
-          x={selectedCoordinate[2]}
-          y={selectedCoordinate[0]}
+          left={selectedCoordinate[2]}
+          top={selectedCoordinate[0]}
           width={selectedCoordinate[3]-selectedCoordinate[2]}
           height={selectedCoordinate[1]-selectedCoordinate[0]}
           selected
@@ -42,9 +38,10 @@ export function ImageDetails(props){
 
       {
         (src && coordinates && !selectedCoordinate) && (coordinates || []).map(coordinate => {
+          {console.log(coordinate, 'coordinatecoordinatecoordinate')}
           return <Marker
-            x={coordinate[2]}
-            y={coordinate[0]}
+            left={coordinate[2]}
+            top={coordinate[0]}
             width={coordinate[3]-coordinate[2]}
             height={coordinate[1]-coordinate[0]}
           />
@@ -54,7 +51,3 @@ export function ImageDetails(props){
    </Container>
  )
 }
-
-// [10, 2, 4, 3], [y1, y2, x1, x2]
-// [47, 224, 4, 224],
-// y2 - y1

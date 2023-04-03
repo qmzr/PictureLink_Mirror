@@ -15,6 +15,7 @@ import { ScorePrediction } from './components/ScorePrediction/ScorePrediction';
 import { StatsOverview } from './components/StatsOverview/StatsOverview';
 import { ImageDetails } from './components/ImageDetails/ImageDetails';
 import Response from './response.json'
+import { BarChart } from './components/BarCharts/BarCharts';
 
 function App() {
   const [fileUrl, setFileUrl] = useState()
@@ -61,7 +62,9 @@ function App() {
           coordinates={Response.top_10_prototypes[0].coordinates}
           selectedItem={selectedItem}
         />
-        <GraphSection />
+        <GraphSection>
+          <BarChart />
+        </GraphSection>
       </ClassificationSection>
 
       <ImagePrototypesSection>

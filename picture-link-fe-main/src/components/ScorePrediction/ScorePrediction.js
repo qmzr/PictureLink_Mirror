@@ -8,8 +8,8 @@ export function ScorePrediction(){
     {/* <ImageTitle> Red Cockaded Woodpecker</ImageTitle> */}
       <ImageWrapper>
         <Row>
-          <div> original image</div>
-          <div> Training Image</div>
+          <div> Test image</div>
+          <div> Prototype Image</div>
           <div> Similarity Score</div>
         </Row>
        <Row>
