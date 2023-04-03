@@ -7,6 +7,11 @@ export function ScorePrediction(){
     {/* todo add a foreach loop through cordinates for the backend and display */}
     {/* <ImageTitle> Red Cockaded Woodpecker</ImageTitle> */}
       <ImageWrapper>
+        <Row>
+          <div> original image</div>
+          <div> Training Image</div>
+          <div> Similarity Score</div>
+        </Row>
        <Row>
         <ImagePreview src="images/image-7.png" />
         <ImagePreview src="images/image-8.png" />

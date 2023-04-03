@@ -8,17 +8,27 @@ import { Container,
   ImageTitle,
   Content,
  } from "./RankedPrototypes.style";
-export function RankedPrototypes(){
+ import Response from '../../response.json'
+
+
+ console.log(Response, 'ResponseResponseResponse')
+
+
+export function RankedPrototypes(props){
+  const { onItemClick } = props;
  return (
    <Container>
     <h4>Ranked Prototoypes</h4>
     <Content>
-      <RankedPrototype src='images/image-1.png' />
-      <RankedPrototype src='images/image-2.png' />
-      <RankedPrototype src='images/image-3.png' />
-      <RankedPrototype src='images/image-4.png' />
-      <RankedPrototype src='images/image-5.png' />
-      <RankedPrototype src='images/image-6.png' />
+      {
+        Response.top_10_classes.map((top10, index) => {
+          return <RankedPrototype
+            src='images/image-1.png'
+            data={top10}
+            onClick={() => onItemClick(index)}
+          />
+        })
+      }
     </Content>
     {/* todo add a foreach loop through cordinates for the backend and display */}
     {/* <ImageTitle> Ranked Prototoypes</ImageTitle> */}
