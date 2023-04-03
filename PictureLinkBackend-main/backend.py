@@ -1,9 +1,25 @@
 import subprocess
+import sys
 
+import os
+
+# Specify the path to the file you want to delete
+file_path_to_remove = "./theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+
+# Check if the file exists before deleting it
+if os.path.exists(file_path_to_remove):
+    os.remove(file_path_to_remove)
+    print(f"File '{file_path_to_remove}' deleted successfully.")
+else:
+    print(f"File '{file_path_to_remove}' does not exist.")
+
+
+originalImageDirectory = sys.argv[1]
+originalImageName = sys.argv[2]
 
 ImgPath = ""
-LogPath = "./theImages/vgg19/004/50_19push0.0986.pth/local_analysis.log"
-# subprocess.call(['bash', 'python3 local_anlysis.py'])
+LogPath = "./theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+subprocess.call(['python3', 'local_analysis.py', '-imgdir', originalImageDirectory, '-img', originalImageName])
 
 lines = []
 # Read the log file to extract the information
@@ -69,8 +85,8 @@ result = softmax(logitsList)
 # print(len(logitsList))
 # report the sum of the probabilities
 
-print (len(result))
-print (len(sortedClassNumbers))
+# print (len(result))
+# print (len(sortedClassNumbers))
 for i in range(len(sortedClassNumbers)):
 	classDict[sortedClassNumbers[i]][3] = result[i] 
 
@@ -81,34 +97,57 @@ import os
 
 #'top-20_class_prototypes'
 
-folderPath = './theImages/vgg19/004/'
+folderPath = './theImages/vgg19/005/'
 directories = [name for name in os.listdir(folderPath) if os.path.isdir(os.path.join(folderPath, name))]
 
-for i in range(1, 51):
+for i in range(1, 11):
 	folderName = folderPath + directories[0] + "/top-" + str(i) + "_class_prototypes/";
 	imgNames = []
 	for j in range(1, 11):
-		imgName = "top-" + str(i) + "_activated_prototype_in_original_pimg.png"
+		imgName = "top-" + str(j) + "_activated_prototype_in_original_pimg.png"
 		imgNames.append(folderName + imgName)
 	classDict[sortedClassNumbers[i - 1]][4] = imgNames
 
 
 
-for i in classDict:
-	print (i)
-	print (classDict[i])
-	print ("\n")
+# for i in classDict:
+# 	print (i)
+# 	print (classDict[i])
+# 	print ("\n")
+
+nameDict = {}
+with open("classes.txt", "r") as f:
+    for line in f:
+        s = line.strip().split()
+        k = s[0]
+        v = s[1].split('.')[1]
+        nameDict[k] = v
+f.close()
+
+
+
+
+for i in sortedClassNumbers:
+	for j in range(len(classDict[i][0])):
+		pass
+		classDict[i][0][j] *= classDict[i][1][j]
 
 jsonDict = {}
 classListDict = []
+# print (sortedClassNumbers)
+# print (classDict)
 for i in sortedClassNumbers:
 	theDict = {}
 	interiorDict = {}
 	interiorDict["scores"] = classDict[i][0]
-	interiorDict["weights"] = classDict[i][1]
+	# interiorDict["weights"] = classDict[i][1]
 	interiorDict["logit"] = classDict[i][2]
 	interiorDict["probability"] = classDict[i][3]
-	interiorDict["images"] = classDict[i][4]
+	# interiorDict["images"] = classDict[i][4]
+	# print (i)
+	interiorDict["class_name"] = (nameDict[str(int(i) + 1)]).replace("_", " ")
+	interiorDict["class_number"] = str(int(i) + 1)
+	# interiorDict["score"] = sum(classDict[i][0])
 
 	theDict[i] = interiorDict
 
@@ -117,18 +156,38 @@ for i in sortedClassNumbers:
 
 originalImageDict = {}
 
-theLines = []
-
+coordianteOriginal = []
+coordianteTop10 = []
 with open("coordinates.txt", "r") as f:
     for line in f:
         nums = [int(x) for x in line.strip().split()]
-        theLines.append(nums)
+        coordianteOriginal.append(nums)
 f.close()
+
+with open("coordinates2.txt", "r") as f:
+    for line in f:
+        nums = [int(x) for x in line.strip().split()]
+        coordianteTop10.append(nums)
 
 # print(theLines)
 
-jsonDict["classes"] = classListDict
-jsonDict["image"] = {"url": folderPath + directories[0] + "/original_img.png", "boxes": theLines[:10]} 
+top10PrototypeAddress = []
+for i in range(10):
+	path = "top-" + str(i) + "_activated_prototype_in_original_pimg.png"
+	top10PrototypeAddress.append(folderPath + directories[0] + path)
+
+jsonDict["top_10_classes"] = classListDict
+# jsonDict["original_image"] = {"original_image_path": folderPath + directories[0] + "/original_img.png"}
+jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10]}
+jsonDict["path"] = {"url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/",
+					"top-prototypes": {"folder": "most_activated_prototypes/",
+									   "name_of_file": "top-X_activated_prototype_in_original_pimg.png"},
+			        "reasoning":{
+			            "folder": "top-X_class_prototypes",
+			            "original_image": "most_highly_activated_patch_in_original_img_by_top-X_prototype.png",
+			            "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
+			        },
+			        "resized_original_image":"original_img.png"}
 import json
 jsonStr = json.dumps(jsonDict)
 
