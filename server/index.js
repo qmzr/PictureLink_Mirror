@@ -4,6 +4,9 @@ var cors = require('cors')
 const express = require('express'),
 app = express();
 /*Random lesson, Type script has a keyword called 'declare' that is used to let a compiler know that the variable/object stated after the 'declare' keyword exists.*/
+
+// Basically i don't need to send the image file. All i need to send is the url to where the image exists on the internet. This would mean that a server or cloud database would have to host it. and
+// the server would send it there.
 var response = {
     "top_10_classes": [
         {
