@@ -1,0 +1,932 @@
+load model from ./saved_models_3/vgg19/005/50_19push0.1070.pth
+model base architecture: vgg19
+experiment run: 005/
+Prototypes are chosen from 200 number of classes.
+Their class identities are: [  0   0   0 ... 199 199 199]
+All prototypes connect most strongly to their respective classes.
+0 (0, 0)
+Predicted: 0
+Actual: 0
+Most activated 10 prototypes of this image:
+top 1 activated prototype for this image:
+prototype index: 233
+prototype class identity: 23
+activation value (similarity score): 5.169887542724609
+last layer connection with predicted class: -0.4654306173324585
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 2 activated prototype for this image:
+prototype index: 1435
+prototype class identity: 143
+activation value (similarity score): 4.941129207611084
+last layer connection with predicted class: -0.4854780435562134
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 3 activated prototype for this image:
+prototype index: 495
+prototype class identity: 49
+activation value (similarity score): 4.450197219848633
+last layer connection with predicted class: -0.47804194688796997
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 4 activated prototype for this image:
+prototype index: 857
+prototype class identity: 85
+activation value (similarity score): 4.257251262664795
+last layer connection with predicted class: -0.46333861351013184
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 5 activated prototype for this image:
+prototype index: 1409
+prototype class identity: 140
+activation value (similarity score): 4.25268030166626
+last layer connection with predicted class: -0.5049192905426025
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 6 activated prototype for this image:
+prototype index: 897
+prototype class identity: 89
+activation value (similarity score): 4.159684181213379
+last layer connection with predicted class: -0.49697330594062805
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 7 activated prototype for this image:
+prototype index: 246
+prototype class identity: 24
+activation value (similarity score): 4.140343189239502
+last layer connection with predicted class: -0.45997264981269836
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 8 activated prototype for this image:
+prototype index: 1015
+prototype class identity: 101
+activation value (similarity score): 4.046091079711914
+last layer connection with predicted class: -0.5082588195800781
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 9 activated prototype for this image:
+prototype index: 625
+prototype class identity: 62
+activation value (similarity score): 4.027530670166016
+last layer connection with predicted class: -0.4632725715637207
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+top 10 activated prototype for this image:
+prototype index: 6
+prototype class identity: 0
+activation value (similarity score): 4.0024542808532715
+last layer connection with predicted class: 0.9936630129814148
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+Prototypes from top-10 classes:
+top 1 predicted class: 0
+logit of the class: -1540.601074
+prototype index: 6
+prototype class identity: 0
+activation value (similarity score): 4.0024542808532715
+last layer connection: 0.9936630129814148
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 3
+prototype class identity: 0
+activation value (similarity score): 3.3864829540252686
+last layer connection: 0.9538374543190002
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 0
+prototype class identity: 0
+activation value (similarity score): 3.1235086917877197
+last layer connection: 0.969264030456543
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1
+prototype class identity: 0
+activation value (similarity score): 3.09047532081604
+last layer connection: 1.0136542320251465
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 8
+prototype class identity: 0
+activation value (similarity score): 3.0018789768218994
+last layer connection: 0.9937358498573303
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 9
+prototype class identity: 0
+activation value (similarity score): 2.231987714767456
+last layer connection: 1.0035277605056763
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 5
+prototype class identity: 0
+activation value (similarity score): 1.8789308071136475
+last layer connection: 0.9689725637435913
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 4
+prototype class identity: 0
+activation value (similarity score): 1.8098019361495972
+last layer connection: 1.0126030445098877
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 2
+prototype class identity: 0
+activation value (similarity score): 1.4732284545898438
+last layer connection: 0.9834463596343994
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 7
+prototype class identity: 0
+activation value (similarity score): 0.6477999687194824
+last layer connection: 0.9853425621986389
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 2 predicted class: 23
+logit of the class: -1543.612305
+prototype index: 233
+prototype class identity: 23
+activation value (similarity score): 5.169887542724609
+last layer connection: 0.9653536081314087
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 237
+prototype class identity: 23
+activation value (similarity score): 2.605485200881958
+last layer connection: 1.001419186592102
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 230
+prototype class identity: 23
+activation value (similarity score): 2.514187812805176
+last layer connection: 0.9726973176002502
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 238
+prototype class identity: 23
+activation value (similarity score): 2.3010098934173584
+last layer connection: 0.9597849249839783
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 232
+prototype class identity: 23
+activation value (similarity score): 2.2892818450927734
+last layer connection: 1.0077929496765137
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 235
+prototype class identity: 23
+activation value (similarity score): 2.2583489418029785
+last layer connection: 0.9844310283660889
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 239
+prototype class identity: 23
+activation value (similarity score): 2.141223907470703
+last layer connection: 0.9698370099067688
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 234
+prototype class identity: 23
+activation value (similarity score): 1.941939353942871
+last layer connection: 0.9224165081977844
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 231
+prototype class identity: 23
+activation value (similarity score): 1.8006582260131836
+last layer connection: 1.026302456855774
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 236
+prototype class identity: 23
+activation value (similarity score): 0.870119035243988
+last layer connection: 0.9781262874603271
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 3 predicted class: 22
+logit of the class: -1543.783813
+prototype index: 222
+prototype class identity: 22
+activation value (similarity score): 3.429131031036377
+last layer connection: 1.0386343002319336
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 225
+prototype class identity: 22
+activation value (similarity score): 2.5747644901275635
+last layer connection: 0.9748458862304688
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 220
+prototype class identity: 22
+activation value (similarity score): 2.2990691661834717
+last layer connection: 0.9975385665893555
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 228
+prototype class identity: 22
+activation value (similarity score): 2.2882943153381348
+last layer connection: 0.9922950267791748
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 223
+prototype class identity: 22
+activation value (similarity score): 2.2721784114837646
+last layer connection: 0.9903332591056824
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 229
+prototype class identity: 22
+activation value (similarity score): 1.8681813478469849
+last layer connection: 0.9792622327804565
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 224
+prototype class identity: 22
+activation value (similarity score): 1.8199970722198486
+last layer connection: 1.0084381103515625
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 221
+prototype class identity: 22
+activation value (similarity score): 1.4386534690856934
+last layer connection: 1.0054200887680054
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 227
+prototype class identity: 22
+activation value (similarity score): 1.2555110454559326
+last layer connection: 1.0184307098388672
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 226
+prototype class identity: 22
+activation value (similarity score): 0.8114922642707825
+last layer connection: 0.9829871654510498
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 4 predicted class: 2
+logit of the class: -1543.820801
+prototype index: 21
+prototype class identity: 2
+activation value (similarity score): 3.754833459854126
+last layer connection: 0.9476600885391235
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 23
+prototype class identity: 2
+activation value (similarity score): 2.757155656814575
+last layer connection: 1.018880009651184
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 25
+prototype class identity: 2
+activation value (similarity score): 2.699714183807373
+last layer connection: 1.0471553802490234
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 29
+prototype class identity: 2
+activation value (similarity score): 2.4642786979675293
+last layer connection: 0.9959816932678223
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 22
+prototype class identity: 2
+activation value (similarity score): 2.000840187072754
+last layer connection: 0.949478030204773
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 27
+prototype class identity: 2
+activation value (similarity score): 1.936445951461792
+last layer connection: 0.9943443536758423
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 28
+prototype class identity: 2
+activation value (similarity score): 1.9291677474975586
+last layer connection: 0.9731304049491882
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 20
+prototype class identity: 2
+activation value (similarity score): 1.6211031675338745
+last layer connection: 0.9015970826148987
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 26
+prototype class identity: 2
+activation value (similarity score): 1.190934419631958
+last layer connection: 1.0061572790145874
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 24
+prototype class identity: 2
+activation value (similarity score): 1.0833967924118042
+last layer connection: 0.9009726047515869
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 5 predicted class: 86
+logit of the class: -1544.074951
+prototype index: 861
+prototype class identity: 86
+activation value (similarity score): 3.566518783569336
+last layer connection: 1.0431370735168457
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 860
+prototype class identity: 86
+activation value (similarity score): 2.6871886253356934
+last layer connection: 0.9801642894744873
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 867
+prototype class identity: 86
+activation value (similarity score): 2.152184247970581
+last layer connection: 1.0082427263259888
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 866
+prototype class identity: 86
+activation value (similarity score): 2.058490037918091
+last layer connection: 0.9805416464805603
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 863
+prototype class identity: 86
+activation value (similarity score): 2.0365822315216064
+last layer connection: 0.9871842265129089
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 865
+prototype class identity: 86
+activation value (similarity score): 1.6633340120315552
+last layer connection: 0.9851377010345459
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 869
+prototype class identity: 86
+activation value (similarity score): 1.5195890665054321
+last layer connection: 1.0207383632659912
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 862
+prototype class identity: 86
+activation value (similarity score): 1.5038913488388062
+last layer connection: 1.018926739692688
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 868
+prototype class identity: 86
+activation value (similarity score): 1.1736457347869873
+last layer connection: 0.9275137782096863
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 864
+prototype class identity: 86
+activation value (similarity score): 1.1736457347869873
+last layer connection: 0.9275137782096863
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 6 predicted class: 99
+logit of the class: -1544.223999
+prototype index: 991
+prototype class identity: 99
+activation value (similarity score): 3.8321115970611572
+last layer connection: 0.98832768201828
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 995
+prototype class identity: 99
+activation value (similarity score): 2.7730610370635986
+last layer connection: 1.0208361148834229
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 999
+prototype class identity: 99
+activation value (similarity score): 2.5610463619232178
+last layer connection: 0.9999824166297913
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 993
+prototype class identity: 99
+activation value (similarity score): 2.351625442504883
+last layer connection: 0.9973020553588867
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 994
+prototype class identity: 99
+activation value (similarity score): 2.220832586288452
+last layer connection: 0.9768796563148499
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 992
+prototype class identity: 99
+activation value (similarity score): 2.149049758911133
+last layer connection: 0.9884244203567505
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 996
+prototype class identity: 99
+activation value (similarity score): 1.707481026649475
+last layer connection: 0.9730396270751953
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 990
+prototype class identity: 99
+activation value (similarity score): 1.06386137008667
+last layer connection: 1.0229111909866333
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 997
+prototype class identity: 99
+activation value (similarity score): 0.8939478993415833
+last layer connection: 0.9695609211921692
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 998
+prototype class identity: 99
+activation value (similarity score): 0.5962190628051758
+last layer connection: 0.9576239585876465
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 7 predicted class: 24
+logit of the class: -1544.235474
+prototype index: 246
+prototype class identity: 24
+activation value (similarity score): 4.140343189239502
+last layer connection: 1.0155773162841797
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 242
+prototype class identity: 24
+activation value (similarity score): 3.328521966934204
+last layer connection: 0.9657261967658997
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 240
+prototype class identity: 24
+activation value (similarity score): 2.7796883583068848
+last layer connection: 0.9542058706283569
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 249
+prototype class identity: 24
+activation value (similarity score): 1.9520583152770996
+last layer connection: 0.9965904355049133
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 244
+prototype class identity: 24
+activation value (similarity score): 1.8670955896377563
+last layer connection: 1.0053032636642456
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 245
+prototype class identity: 24
+activation value (similarity score): 1.8664343357086182
+last layer connection: 1.0126725435256958
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 247
+prototype class identity: 24
+activation value (similarity score): 1.8535759449005127
+last layer connection: 0.8980814814567566
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 241
+prototype class identity: 24
+activation value (similarity score): 1.8535759449005127
+last layer connection: 0.8980814814567566
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 248
+prototype class identity: 24
+activation value (similarity score): 1.426761269569397
+last layer connection: 0.8797653317451477
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 243
+prototype class identity: 24
+activation value (similarity score): 1.426761269569397
+last layer connection: 0.8797653317451477
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 8 predicted class: 1
+logit of the class: -1545.531616
+prototype index: 12
+prototype class identity: 1
+activation value (similarity score): 3.2453901767730713
+last layer connection: 0.9875199198722839
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 10
+prototype class identity: 1
+activation value (similarity score): 3.1422815322875977
+last layer connection: 1.0280835628509521
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 16
+prototype class identity: 1
+activation value (similarity score): 2.4964749813079834
+last layer connection: 0.9699822664260864
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 11
+prototype class identity: 1
+activation value (similarity score): 2.0107576847076416
+last layer connection: 0.9747450947761536
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 18
+prototype class identity: 1
+activation value (similarity score): 1.973517894744873
+last layer connection: 0.9853872060775757
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 14
+prototype class identity: 1
+activation value (similarity score): 1.8329176902770996
+last layer connection: 1.0309330224990845
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 13
+prototype class identity: 1
+activation value (similarity score): 1.7106328010559082
+last layer connection: 0.9901142716407776
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 15
+prototype class identity: 1
+activation value (similarity score): 1.50417160987854
+last layer connection: 0.9875651597976685
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 19
+prototype class identity: 1
+activation value (similarity score): 1.1112931966781616
+last layer connection: 1.0002186298370361
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 17
+prototype class identity: 1
+activation value (similarity score): 0.5435705184936523
+last layer connection: 1.0076813697814941
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 9 predicted class: 89
+logit of the class: -1545.568726
+prototype index: 897
+prototype class identity: 89
+activation value (similarity score): 4.159684181213379
+last layer connection: 0.998862624168396
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 895
+prototype class identity: 89
+activation value (similarity score): 3.4935483932495117
+last layer connection: 0.9910920858383179
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 893
+prototype class identity: 89
+activation value (similarity score): 3.1044921875
+last layer connection: 0.9970565438270569
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 894
+prototype class identity: 89
+activation value (similarity score): 2.742309331893921
+last layer connection: 0.9766455888748169
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 899
+prototype class identity: 89
+activation value (similarity score): 2.436765193939209
+last layer connection: 0.9755154848098755
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 891
+prototype class identity: 89
+activation value (similarity score): 2.27386212348938
+last layer connection: 0.984627902507782
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 896
+prototype class identity: 89
+activation value (similarity score): 2.0071322917938232
+last layer connection: 1.0037068128585815
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 890
+prototype class identity: 89
+activation value (similarity score): 1.8958138227462769
+last layer connection: 0.999528706073761
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 898
+prototype class identity: 89
+activation value (similarity score): 1.8727716207504272
+last layer connection: 0.9887104630470276
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 892
+prototype class identity: 89
+activation value (similarity score): 1.7345112562179565
+last layer connection: 0.9680742025375366
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+top 10 predicted class: 143
+logit of the class: -1545.923096
+prototype index: 1435
+prototype class identity: 143
+activation value (similarity score): 4.941129207611084
+last layer connection: 0.9539816975593567
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1439
+prototype class identity: 143
+activation value (similarity score): 2.89396071434021
+last layer connection: 0.9693849086761475
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1436
+prototype class identity: 143
+activation value (similarity score): 2.6606791019439697
+last layer connection: 0.9723280668258667
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1432
+prototype class identity: 143
+activation value (similarity score): 1.3930437564849854
+last layer connection: 0.9644562602043152
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1431
+prototype class identity: 143
+activation value (similarity score): 1.3372904062271118
+last layer connection: 1.0089731216430664
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1433
+prototype class identity: 143
+activation value (similarity score): 1.323704481124878
+last layer connection: 0.9934567213058472
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1437
+prototype class identity: 143
+activation value (similarity score): 1.1646082401275635
+last layer connection: 0.9628912806510925
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1430
+prototype class identity: 143
+activation value (similarity score): 1.1646082401275635
+last layer connection: 0.9628912806510925
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1438
+prototype class identity: 143
+activation value (similarity score): 1.0096373558044434
+last layer connection: 0.9576634764671326
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+prototype index: 1434
+prototype class identity: 143
+activation value (similarity score): 0.8848775625228882
+last layer connection: 0.9825756549835205
+most highly activated patch of the chosen image by this prototype:
+most highly activated patch by this prototype shown in the original image:
+prototype activation map of the chosen image:
+--------------------------------------------------------------
+***************************************************************
+Prediction is correct.

@@ -2,11 +2,15 @@
 // you might use a socket https://socket.io/docs/v4/
 var cors = require('cors')
 const express = require('express'),
+multer  = require('multer'),
+path = require('path'),
+fs = require('fs'),
+upload = multer({ dest: 'testImage/' }),
 app = express();
 /*Random lesson, Type script has a keyword called 'declare' that is used to let a compiler know that the variable/object stated after the 'declare' keyword exists.*/
-
 // Basically i don't need to send the image file. All i need to send is the url to where the image exists on the internet. This would mean that a server or cloud database would have to host it. and
 // the server would send it there.
+const formData = new FormData();
 var response = {
     "top_10_classes": [
         {
@@ -100,6 +104,27 @@ var response = {
             ]
         }
     ],
+
+    "top_10_prototypes": [
+
+        {
+        
+         "coordinates":  [0, 44, 54, 120],
+        
+        "prototype_image": "/images...."  
+        
+        },
+        
+                {
+        
+                  "coordinates":  [55, 44, 54, 120],
+        
+                   "prototype_image": "/images...."  
+        
+               },
+        
+        ],
+
     "path": {
         "url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/004/50_19push0.0986.pth/",
         "top_prototypes": {
@@ -123,11 +148,40 @@ app.get("/", function(req, res){
     res.send("Hello, world!");
 });
 
-app.post("/image", function(req, res){
-    console.log(`request: ${req}`);
-    res.json(response);
+app.post("/image", upload.single('image'),function(req, res){
+    console.log(`request: ${req.file}`);
+    //res.json(response);
+
+ const tempPath = req.file.path;
+  const targetPath = path.join(__dirname, req.file.originalname);
+
+  if (path.extname(req.file.originalname).toLowerCase() === ".png" ||
+      path.extname(req.file.originalname).toLowerCase() === ".jpg" ||
+      path.extname(req.file.originalname).toLowerCase() === ".jpeg" ||
+      path.extname(req.file.originalname).toLowerCase() === ".gif") {
+
+    fs.rename(tempPath, targetPath, err => {
+      if (err) return handleError(err, res);
+
+      res
+        .status(200)
+        .contentType("text/plain")
+        .json(response);
+    });
+  } else {
+    fs.unlink(tempPath, err => {
+      if (err) return handleError(err, res);
+
+      res
+        .status(403)
+        .contentType("text/plain")
+        .end("Only .png, .jpg, .jpeg and .gif files are allowed!");
+    });
+  }
 });
 
 app.listen(port, function(){
     console.log(`Express app started on port ${port}`)
 });
+
+
