@@ -13,6 +13,7 @@ if os.path.exists(file_path_to_remove):
 else:
     print(f"File '{file_path_to_remove}' does not exist.")
 
+startPath = "picture-link-be/PictureLinkBackend-main/"
 
 originalImageDirectory = sys.argv[1]
 originalImageName = sys.argv[2]
@@ -101,7 +102,7 @@ folderPath = './theImages/vgg19/005/'
 directories = [name for name in os.listdir(folderPath) if os.path.isdir(os.path.join(folderPath, name))]
 
 for i in range(1, 11):
-	folderName = folderPath + directories[0] + "/top-" + str(i) + "_class_prototypes/";
+	folderName = startPath + folderPath + directories[0] + "/top-" + str(i) + "_class_prototypes/";
 	imgNames = []
 	testPatches = []
 	for j in range(1, 11):
@@ -182,8 +183,8 @@ with open("coordinates2.txt", "r") as f:
 
 top10PrototypeAddress = []
 for i in range(10):
-	path = "top-" + str(i) + "_activated_prototype_in_original_pimg.png"
-	top10PrototypeAddress.append(folderPath + directories[0] + path)
+	path = "/most_activated_prototypes/top-" + str(i+1) + "_activated_prototype_in_original_pimg.png"
+	top10PrototypeAddress.append(startPath + folderPath + directories[0] + path)
 
 jsonDict["top_10_classes"] = classListDict
 # jsonDict["original_image"] = {"original_image_path": folderPath + directories[0] + "/original_img.png"}
@@ -203,7 +204,7 @@ jsonDict["top_10_prototypes"] = tempDictList
 # 			            "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
 # 			        },
 # 			        "resized_original_image":"original_img.png"}
-jsonDict["resized_original_image"] = "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/original_img.png"
+jsonDict["resized_original_image"] = startPath + "theImages/vgg19/005/50_19push0.1070.pth/original_img.png"
 jsonDict["number_of_classes"] = "200"
 jsonDict["number_of_training_images"] = "5792"
 jsonDict["number_of_patches"] = "10"
