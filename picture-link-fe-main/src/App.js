@@ -21,6 +21,7 @@ function App() {
   const [fileUrl, setFileUrl] = useState()
   const [aspectRatio, setAspectRatio] = useState(0)
   const [selectedItem, setSelectedItem] = useState(null)
+  const [selectedBar, setSelectedBar] = useState(null)
 
   const handleUploadChange = (file) => {
    const url =  URL.createObjectURL(file)
@@ -63,13 +64,13 @@ function App() {
           selectedItem={selectedItem}
         />
         <GraphSection>
-          <BarChart />
+          <BarChart onClick={setSelectedBar}/>
         </GraphSection>
       </ClassificationSection>
 
       <ImagePrototypesSection>
         <RankedPrototypes onItemClick={setSelectedItem} />
-        <ScorePrediction />
+        <ScorePrediction selectedBar={selectedBar} />
       </ImagePrototypesSection>
     </Container>
   );
