@@ -13,6 +13,25 @@ app = express(),
 /*Random lesson, Type script has a keyword called 'declare' that is used to let a compiler know that the variable/object stated after the 'declare' keyword exists.*/
 // Basically i don't need to send the image file. All i need to send is the url to where the image exists on the internet. This would mean that a server or cloud database would have to host it. and
 // the server would send it there.
+
+const PATH2JSON = "../PictureLinkBackend-main/backendJSON.json";
+
+function handleError(err,res){
+    
+    console.log(`Error: ${err}`);
+
+    res
+    .status(403)
+    .contentType("text/plain")
+    .end("Only .png, .jpg, .jpeg and .gif files are allowed!");
+
+}
+
+function readJson(path){
+    const data = fs.readFileSync(path);
+    const jsonData = JSON.parse(data);
+    return jsonData;
+}
 const formData = new FormData();
 var response = {
     "top_10_classes": [
@@ -153,10 +172,7 @@ app.get("/", function(req, res){
 
 app.post("/image", upload.single('image'),function(req, res){
     console.log(`request: ${req.file}`);
-    //res.json(response);
 
-
-//   const targetPath = path.join(`${__dirname}/${destination}`, req.file.originalname);
  const extention = path.extname(req.file.originalname);
  const tempPath = req.file.path,
  file = `testImage${extention}`;
@@ -176,6 +192,15 @@ app.post("/image", upload.single('image'),function(req, res){
 
     command.on('exit', (code) => {
       console.log(`child process exited with code ${code}`);
+
+
+     response = readJson(PATH2JSON);
+
+     console.log(`RESPONSE:  \n  ${response}`);
+      res
+      .status(200)
+      .contentType("text/plain")
+      .json(response);
     });
   
     command.stdout.on('data', (data) => {
@@ -185,23 +210,14 @@ app.post("/image", upload.single('image'),function(req, res){
       command.stderr.on('data', (data) => {
         console.error(`command stderr: ${data}`);
       });
-      
-    res
-    .status(200)
-    .contentType("text/plain")
-    .json(response);
+
+
     
   } else {
     fs.unlink(tempPath, err => {
       if (err) return handleError(err, res);
-
-      res
-        .status(403)
-        .contentType("text/plain")
-        .end("Only .png, .jpg, .jpeg and .gif files are allowed!");
     });
   }
-
 
 });
 
