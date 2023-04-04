@@ -33,10 +33,25 @@ classNumber = ""
 logitsList = []
 sortedClassNumbers = []
 # Class Name :
+
+firstHalf = True
+ls1 = []
+ls2 = []
 for i in range(len(lines)):
 	theLine = lines[i]
+
+	if firstHalf:
+		if "prototype class identity:" in theLine:
+			classIdentity = theLine[25:].strip()
+			ls1.append(int(classIdentity))
+
+		elif "activation value (similarity score):" in theLine:
+			simScore = theLine[36:].strip()
+			ls2.append(round(float(simScore), 2))
+
 	if len(theLine) > 8:
 		if ("top" in theLine) and ("predicted class:" in theLine):
+			firstHalf = False
 			# Extract class number
 			# print (theLine)
 
@@ -73,6 +88,8 @@ for i in range(len(lines)):
 			classDict[classNumber][2] = theLogit
 			logitsList.append(theLogit)
 
+print (ls1)
+print (ls2)
 # print (len(classDict))
 # print (logitsList)
 
@@ -191,7 +208,8 @@ jsonDict["top_10_classes"] = classListDict
 
 tempDictList = []
 for i in range(len(coordianteOriginal)):
-	tempDictList.append({"coordinates": coordianteOriginal[i], "prototype_image": top10PrototypeAddress[i]})
+	tempDictList.append({"coordinates": coordianteOriginal[i], "prototype_image": top10PrototypeAddress[i], "classNumber": ls1[i], "score": ls2[i], 
+		"className": (nameDict[str(int(ls1[i]))]).replace("_", " ")})
 
 jsonDict["top_10_prototypes"] = tempDictList
 # jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10], "top_10_prototype_images":top10PrototypeAddress}
