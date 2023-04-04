@@ -26,7 +26,16 @@ export function ScorePrediction(){
         <ImagePreview src="images/image-11.png" />
         <ImagePreview src="images/image-12.png" />
         <Score> 3 </Score>
-       </Row>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div> </div>
+        <div>Total points to red-cockaded woodpecker</div>
+        <div><b>168.8</b></div>
+      </Row>
       </ImageWrapper>
    </Container>
  )
