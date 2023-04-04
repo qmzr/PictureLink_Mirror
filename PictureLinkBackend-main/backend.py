@@ -17,7 +17,7 @@ originalImageDirectory = sys.argv[1]
 originalImageName = sys.argv[2]
 
 ImgPath = ""
-LogPath = "./theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+LogPath = "../theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
 subprocess.call(['python3', 'local_analysis.py', '-imgdir', originalImageDirectory, '-img', originalImageName])
 
 lines = []
