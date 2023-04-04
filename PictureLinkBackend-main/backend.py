@@ -162,7 +162,7 @@ for j in range(len(sortedClassNumbers)):
 	theDict[i] = interiorDict
 
 
-	classListDict.append(theDict)
+	classListDict.append(interiorDict)
 
 originalImageDict = {}
 
