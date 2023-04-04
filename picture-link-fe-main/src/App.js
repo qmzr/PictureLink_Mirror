@@ -51,9 +51,9 @@ function App() {
 
       <OverviewSection>
         <Upload onChange={handleUploadChange} />
-        <StatsOverview title="Total Images" value="17,000" />
-        <StatsOverview title="Number of Patches" value="6" />
-        <StatsOverview title="Total Classes" value="198" />
+        <StatsOverview title="Total Images" value="5792" />
+        <StatsOverview title="Number of Patches" value="10" />
+        <StatsOverview title="Total Classes" value="200" />
       </OverviewSection>
 
       <ClassificationSection>

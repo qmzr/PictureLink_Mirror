@@ -17,8 +17,9 @@ export function Upload(props){
       headers: new Headers({
       }),
     })
-    .then(()=> {})
-    
+    .then(response => response.json())
+    .then(data => console.log(data, "this is data"));
+
   }
 
   return(

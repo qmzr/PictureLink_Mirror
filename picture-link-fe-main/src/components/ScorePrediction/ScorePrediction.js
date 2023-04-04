@@ -11,13 +11,13 @@ export function ScorePrediction(props){
       prototype: data,
       test_image_patch: top_10_class.testImagePatches[index],
       score: top_10_class.scores[index],
-      class_name: top_10_class.class_name
+      class_name: top_10_class.class_name,
+      total_class_score: top_10_class.logit
     }
   })
-  console.log(payload, "this is payload")
  return (
    <Container>
-    <h4>Red Cockaded Woodpecker</h4>
+    <h4>{payload && payload[0].class_name}</h4>
       <ImageWrapper>
         <Row>
           <div> Test Image</div>
@@ -40,8 +40,8 @@ export function ScorePrediction(props){
           <div>.</div>
           <div>.</div>
           <div> </div>
-          <div>Total points to red-cockaded woodpecker</div>
-          <div><b>168.8</b></div>
+          <div>Total points to {payload && payload[0].class_name}</div>
+          <div><b>{payload && payload[0].total_class_score}</b></div>
       </Row>
       </ImageWrapper>
    </Container>

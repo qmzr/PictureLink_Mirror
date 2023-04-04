@@ -7,6 +7,7 @@ import {
   ImageTotalScore,
   Marker,
  } from "./ImageDetails.style";
+ import Response from '../../response.json'
 
 
 export function ImageDetails(props){
@@ -19,9 +20,9 @@ export function ImageDetails(props){
  return (
    <Container aspectRatio={aspectRatio}>
     <Content>
-      <ImageClass>Class 10: Red Bellied Woodpecker</ImageClass>
-      <ImageTotalScore valid={true}>Total Score: <span>32.7%</span></ImageTotalScore>
-      <ImageTotalScore valid={false}>Confidence: <span>15%</span></ImageTotalScore>
+      <ImageClass>{Response.top_10_classes[0].class_number}: {Response.top_10_classes[0].class_name}</ImageClass>
+      <ImageTotalScore valid={true}>Total Score: <span>{Response.top_10_classes[0].logit}</span></ImageTotalScore>
+      <ImageTotalScore valid={false}>Confidence: <span>{Response.top_10_classes[0].probability}%</span></ImageTotalScore>
     </Content>
 
 
