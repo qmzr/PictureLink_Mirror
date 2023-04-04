@@ -15,16 +15,44 @@ export function ScorePrediction(props){
             <div> Similarity Score</div>
           </Row>
         <Row>
-          <ImagePreview src="images/image-7.png" />
-          <ImagePreview src="images/image-8.png" />
-          <Score> {data.score} </Score>
+          {data.prototypes.map((prototype) => {
+              return(<ImagePreview src={prototype} />)
+            })
+          }
+           {data.testImagePatches.map((test_image_patch) => {
+              return(<ImagePreview src={test_image_patch} />)
+            })
+          }
+           {data.scores.map((score) => {
+              return(<Score> {score} </Score>)
+            })
+          }
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div> </div>
+          <div>Total points to `${data.class_name}`</div>
+          <div><b>{Math.round(data.logit * 100)}</b></div>
         </Row>
-        <Row>
+        {/* <Row>
         <ImagePreview src="images/image-9.png" />
           <ImagePreview src="images/image-10.png" />
           <Score>{data.score} </Score>
-        </Row>
-        <Row>
+
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div>.</div>
+          <div> </div>
+          <div>Total points to `${data.class_name}`</div>
+          <div><b>{Math.round(data.logit * 100)}</b></div>
+        </Row> */}
+        {/* <Row>
           <ImagePreview src="images/image-11.png" />
           <ImagePreview src="images/image-12.png" />
           <Score> 3 </Score>
@@ -37,7 +65,7 @@ export function ScorePrediction(props){
           <div> </div>
           <div>Total points to red-cockaded woodpecker</div>
           <div><b>168.8</b></div>
-        </Row>
+        </Row> */}
         </ImageWrapper>
       )
       })
