@@ -11,6 +11,7 @@ if os.path.exists(file_path_to_remove):
 else:
     print(f"File '{file_path_to_remove}' does not exist.")
 
+startPath = "picture-link-be/PictureLinkBackend-main/"
 
 originalImageDirectory = sys.argv[1]
 originalImageName = sys.argv[2]
@@ -30,10 +31,25 @@ classNumber = ""
 logitsList = []
 sortedClassNumbers = []
 # Class Name :
+
+firstHalf = True
+ls1 = []
+ls2 = []
 for i in range(len(lines)):
 	theLine = lines[i]
+
+	if firstHalf:
+		if "prototype class identity:" in theLine:
+			classIdentity = theLine[25:].strip()
+			ls1.append(int(classIdentity))
+
+		elif "activation value (similarity score):" in theLine:
+			simScore = theLine[36:].strip()
+			ls2.append(round(float(simScore), 2))
+
 	if len(theLine) > 8:
 		if ("top" in theLine) and ("predicted class:" in theLine):
+			firstHalf = False
 			# Extract class number
 			# print (theLine)
 
@@ -70,6 +86,8 @@ for i in range(len(lines)):
 			classDict[classNumber][2] = theLogit
 			logitsList.append(theLogit)
 
+print (ls1)
+print (ls2)
 # print (len(classDict))
 # print (logitsList)
 
@@ -98,7 +116,7 @@ folderPath = './theImages/vgg19/005/'
 directories = [name for name in os.listdir(folderPath) if os.path.isdir(os.path.join(folderPath, name))]
 
 for i in range(1, 11):
-	folderName = folderPath + directories[0] + "/top-" + str(i) + "_class_prototypes/";
+	folderName = startPath + folderPath + directories[0] + "/top-" + str(i) + "_class_prototypes/";
 	imgNames = []
 	for j in range(1, 11):
 		imgName = "top-" + str(j) + "_activated_prototype_in_original_pimg.png"
@@ -149,7 +167,7 @@ for i in sortedClassNumbers:
 	theDict[i] = interiorDict
 
 
-	classListDict.append(theDict)
+	classListDict.append(interiorDict)
 
 originalImageDict = {}
 
@@ -170,11 +188,12 @@ with open("coordinates2.txt", "r") as f:
 
 top10PrototypeAddress = []
 for i in range(10):
-	path = "top-" + str(i) + "_activated_prototype_in_original_pimg.png"
-	top10PrototypeAddress.append(folderPath + directories[0] + path)
+	path = "/most_activated_prototypes/top-" + str(i+1) + "_activated_prototype_in_original_pimg.png"
+	top10PrototypeAddress.append(startPath + folderPath + directories[0] + path)
 
 jsonDict["top_10_classes"] = classListDict
 # jsonDict["original_image"] = {"original_image_path": folderPath + directories[0] + "/original_img.png"}
+<<<<<<< HEAD
 jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10]}
 jsonDict["path"] = {"url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/",
 					"top-prototypes": {"folder": "most_activated_prototypes/",
@@ -185,6 +204,30 @@ jsonDict["path"] = {"url": "picture-link-be/PictureLinkBackend-main/theImages/vg
 			            "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
 			        },
 			        "resized_original_image":"original_img.png"}
+=======
+
+tempDictList = []
+for i in range(len(coordianteOriginal)):
+	tempDictList.append({"coordinates": coordianteOriginal[i], "prototype_image": top10PrototypeAddress[i], "classNumber": ls1[i], "score": ls2[i], 
+		"className": (nameDict[str(int(ls1[i]))]).replace("_", " ")})
+
+jsonDict["top_10_prototypes"] = tempDictList
+# jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10], "top_10_prototype_images":top10PrototypeAddress}
+# jsonDict["path"] = {"url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/",
+# 					"top-prototypes": {"folder": "most_activated_prototypes/",
+# 									   "name_of_file": "top-X_activated_prototype_in_original_pimg.png"},
+# 			        "reasoning":{
+# 			            "folder": "top-X_class_prototypes",
+# 			            "original_image": "most_highly_activated_patch_in_original_img_by_top-X_prototype.png",
+# 			            "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
+# 			        },
+# 			        "resized_original_image":"original_img.png"}
+jsonDict["resized_original_image"] = startPath + "theImages/vgg19/005/50_19push0.1070.pth/original_img.png"
+jsonDict["number_of_classes"] = "200"
+jsonDict["number_of_training_images"] = "5792"
+jsonDict["number_of_patches"] = "10"
+
+>>>>>>> db6060895a11314bf91874e12ba1994c901714af
 import json
 jsonStr = json.dumps(jsonDict)
 
