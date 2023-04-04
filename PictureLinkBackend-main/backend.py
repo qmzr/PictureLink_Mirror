@@ -11,7 +11,7 @@ if os.path.exists(file_path_to_remove):
 else:
     print(f"File '{file_path_to_remove}' does not exist.")
 
-startPath = "picture-link-be/PictureLinkBackend-main/"
+startPath = "../../"
 
 originalImageDirectory = sys.argv[1]
 originalImageName = sys.argv[2]
