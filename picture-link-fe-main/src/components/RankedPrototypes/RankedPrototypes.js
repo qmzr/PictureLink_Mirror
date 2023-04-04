@@ -21,10 +21,11 @@ export function RankedPrototypes(props){
     <h4>Ranked Prototoypes</h4>
     <Content>
       {
-        Response.top_10_classes.map((top10, index) => {
+        Response.top_10_prototypes.map((top10, index) => {
           return <RankedPrototype
             src='images/image-1.png'
             data={top10}
+            rankIndex={index}
             onClick={() => onItemClick(index)}
           />
         })

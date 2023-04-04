@@ -60,7 +60,7 @@ function App() {
         <ImageDetails
           src={fileUrl}
           aspectRatio={aspectRatio}
-          coordinates={Response.top_10_prototypes[0].coordinates}
+          coordinates={Response.top_10_prototypes[0].all_cordinates}
           selectedItem={selectedItem}
         />
         <GraphSection>

@@ -11,27 +11,25 @@ import {
 
 export function RankedPrototype(props) {
 
-  const { onClick, data, src } = props
+  const { onClick, data, src, rankIndex } = props
+  const fixed_protoype = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <ImageWrapper onClick={onClick}>
-      <ImagePreview src={data.prototype_patch_image_url} />
-      <ScoreValue>{data.top_class}</ScoreValue>
+      <ImagePreview src={data.prototype_image} />
+      <ScoreValue> {rankIndex + 1}
+      </ScoreValue>
       <DetailsTable>
         <tr>
           <td>Class:</td>
-          <td>{data.class_number}</td>
+          <td>{data.classNumber}</td>
         </tr>
         <tr>
           <td>Name:</td>
-          <td>{data.class_name}</td>
+          <td>{data.className}</td>
         </tr>
         <tr>
           <td>Score</td>
           <td>{data.score}</td>
-        </tr>
-        <tr>
-          <td>Predication</td>
-          <td>{data.probability}</td>
         </tr>
       </DetailsTable>
       {/* <ImageClass>Class 10: Red Bellied Woodpecker</ImageClass>
