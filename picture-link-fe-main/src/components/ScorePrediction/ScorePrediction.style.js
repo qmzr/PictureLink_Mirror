@@ -5,7 +5,7 @@ export const Container = styled.div`
   color: #000;
 
   // display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   padding: 1rem;
 `
 export const Score = styled.div`
