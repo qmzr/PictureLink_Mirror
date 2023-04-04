@@ -1,8 +1,6 @@
 import subprocess
 import sys
-
 import os
-
 # Specify the path to the file you want to delete
 file_path_to_remove = "./theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
 
@@ -52,7 +50,7 @@ for i in range(len(lines)):
 				# print (classNumber)
 			# First element of the value is the number of images compared for the class
 			# Second element of the value is the total score for the class
-			classDict[classNumber] = [[], [], 0, 0, 0, 0]
+			classDict[classNumber] = [[], [], 0, 0, 0]
 	# print (classNumber)
 	if classNumber != "":
 		# print ("HERE")
@@ -75,11 +73,10 @@ for i in range(len(lines)):
 # print (len(classDict))
 # print (logitsList)
 
-
 from scipy.special import softmax
-# define data
+
 # data = [-1540.520752, -1541.105225, -1542.316650, -1542.744629, -1543.237305, -1543.359985, -1544.219727, -1544.485352, -1544.745117, -1544.934082, -1545.008789, -1545.536377]
-# calculate softmax
+
 result = softmax(logitsList)
 # report the probabilities
 # print(len(logitsList))
@@ -103,15 +100,10 @@ directories = [name for name in os.listdir(folderPath) if os.path.isdir(os.path.
 for i in range(1, 11):
 	folderName = folderPath + directories[0] + "/top-" + str(i) + "_class_prototypes/";
 	imgNames = []
-	testPatches = []
 	for j in range(1, 11):
 		imgName = "top-" + str(j) + "_activated_prototype_in_original_pimg.png"
 		imgNames.append(folderName + imgName)
-		
-		imgName = "most_highly_activated_patch_in_original_img_by_top-"+ str(j) + "_prototype.png"
-		testPatches.append(folderName + imgName)
 	classDict[sortedClassNumbers[i - 1]][4] = imgNames
-	classDict[sortedClassNumbers[i - 1]][5] = testPatches
 
 
 
@@ -134,28 +126,24 @@ f.close()
 
 for i in sortedClassNumbers:
 	for j in range(len(classDict[i][0])):
+		pass
 		classDict[i][0][j] *= classDict[i][1][j]
-		classDict[i][0][j] = round(classDict[i][0][j], 2)
 
 jsonDict = {}
 classListDict = []
 # print (sortedClassNumbers)
 # print (classDict)
-for j in range(len(sortedClassNumbers)):
-	i = sortedClassNumbers[j]
+for i in sortedClassNumbers:
 	theDict = {}
 	interiorDict = {}
 	interiorDict["scores"] = classDict[i][0]
 	# interiorDict["weights"] = classDict[i][1]
-	interiorDict["logit"] = round(classDict[i][2], 2)
-	interiorDict["top_class_index"] = j
-	interiorDict["probability"] = round(classDict[i][3] * 100, 0)
-	interiorDict["prototypes"] = classDict[i][4]
-	interiorDict["testImagePatches"] = classDict[i][5]
+	interiorDict["logit"] = classDict[i][2]
+	interiorDict["probability"] = classDict[i][3]
+	# interiorDict["images"] = classDict[i][4]
 	# print (i)
 	interiorDict["class_name"] = (nameDict[str(int(i) + 1)]).replace("_", " ")
 	interiorDict["class_number"] = str(int(i) + 1)
-
 	# interiorDict["score"] = sum(classDict[i][0])
 
 	theDict[i] = interiorDict
@@ -187,27 +175,16 @@ for i in range(10):
 
 jsonDict["top_10_classes"] = classListDict
 # jsonDict["original_image"] = {"original_image_path": folderPath + directories[0] + "/original_img.png"}
-
-tempDictList = []
-for i in range(len(coordianteOriginal)):
-	tempDictList.append({"coordinates": coordianteOriginal[i], "prototype_image": top10PrototypeAddress[i]})
-
-jsonDict["top_10_prototypes"] = tempDictList
-# jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10], "top_10_prototype_images":top10PrototypeAddress}
-# jsonDict["path"] = {"url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/",
-# 					"top-prototypes": {"folder": "most_activated_prototypes/",
-# 									   "name_of_file": "top-X_activated_prototype_in_original_pimg.png"},
-# 			        "reasoning":{
-# 			            "folder": "top-X_class_prototypes",
-# 			            "original_image": "most_highly_activated_patch_in_original_img_by_top-X_prototype.png",
-# 			            "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
-# 			        },
-# 			        "resized_original_image":"original_img.png"}
-jsonDict["resized_original_image"] = "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/original_img.png"
-jsonDict["number_of_classes"] = "200"
-jsonDict["number_of_training_images"] = "5792"
-jsonDict["number_of_patches"] = "10"
-
+jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10]}
+jsonDict["path"] = {"url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/",
+					"top-prototypes": {"folder": "most_activated_prototypes/",
+									   "name_of_file": "top-X_activated_prototype_in_original_pimg.png"},
+			        "reasoning":{
+			            "folder": "top-X_class_prototypes",
+			            "original_image": "most_highly_activated_patch_in_original_img_by_top-X_prototype.png",
+			            "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
+			        },
+			        "resized_original_image":"original_img.png"}
 import json
 jsonStr = json.dumps(jsonDict)
 

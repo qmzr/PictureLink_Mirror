@@ -5,8 +5,11 @@ const express = require('express'),
 multer  = require('multer'),
 path = require('path'),
 fs = require('fs'),
-upload = multer({ dest: 'testImage/' }),
-app = express();
+destination = 'testImage/',
+upload = multer({ dest:  destination }),
+app = express(),
+{ exec } = require("child_process");
+
 /*Random lesson, Type script has a keyword called 'declare' that is used to let a compiler know that the variable/object stated after the 'declare' keyword exists.*/
 // Basically i don't need to send the image file. All i need to send is the url to where the image exists on the internet. This would mean that a server or cloud database would have to host it. and
 // the server would send it there.
@@ -152,22 +155,42 @@ app.post("/image", upload.single('image'),function(req, res){
     console.log(`request: ${req.file}`);
     //res.json(response);
 
- const tempPath = req.file.path;
-  const targetPath = path.join(__dirname, req.file.originalname);
 
-  if (path.extname(req.file.originalname).toLowerCase() === ".png" ||
-      path.extname(req.file.originalname).toLowerCase() === ".jpg" ||
-      path.extname(req.file.originalname).toLowerCase() === ".jpeg" ||
-      path.extname(req.file.originalname).toLowerCase() === ".gif") {
+//   const targetPath = path.join(`${__dirname}/${destination}`, req.file.originalname);
+ const extention = path.extname(req.file.originalname);
+ const tempPath = req.file.path,
+ file = `testImage${extention}`;
+ console.log(`file: ${file}`)
+ const targetPath = path.join('../PictureLinkBackend-main/theImages', file);
+  if (extention.toLowerCase() === ".png" ||
+      extention.toLowerCase() === ".jpg" ||
+      extention.toLowerCase() === ".jpeg" ||
+      extention.toLowerCase() === ".gif") {
 
     fs.rename(tempPath, targetPath, err => {
       if (err) return handleError(err, res);
 
-      res
-        .status(200)
-        .contentType("text/plain")
-        .json(response);
     });
+
+    const command = exec(`./backend.sh ${file}`);
+
+    command.on('exit', (code) => {
+      console.log(`child process exited with code ${code}`);
+    });
+  
+    command.stdout.on('data', (data) => {
+        console.log(`stdout: ${data}`);
+      });
+
+      command.stderr.on('data', (data) => {
+        console.error(`command stderr: ${data}`);
+      });
+      
+    res
+    .status(200)
+    .contentType("text/plain")
+    .json(response);
+    
   } else {
     fs.unlink(tempPath, err => {
       if (err) return handleError(err, res);
@@ -178,6 +201,8 @@ app.post("/image", upload.single('image'),function(req, res){
         .end("Only .png, .jpg, .jpeg and .gif files are allowed!");
     });
   }
+
+
 });
 
 app.listen(port, function(){

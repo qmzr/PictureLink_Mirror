@@ -42,9 +42,11 @@ os.environ['CUDA_VISIBLE_DEVICES'] = args.gpuid[0]
 # specify the test image to be analyzed
 print ('Hello Here')
 print (args.img[0])
+
 # test_image_dir = args.imgdir[0] #'./local_analysis/Painted_Bunting_Class15_0081/'
 # test_image_name = args.img[0] #'Painted_Bunting_0081_15230.jpg'
 # test_image_label = args.imgclass[0] #15
+
 test_image_dir = args.imgdir #'./local_analysis/Painted_Bunting_Class15_0081/'
 test_image_name = args.img #'Painted_Bunting_0081_15230.jpg'
 test_image_label = args.imgclass #15
@@ -52,15 +54,16 @@ test_image_label = args.imgclass #15
 print (test_image_dir[0])
 print (test_image_name[0])
 test_image_dir = test_image_dir[0]
+
 test_image_name = test_image_name[0]
 test_image_path = os.path.join(test_image_dir, test_image_name)
 
 # load the model
 check_test_accu = False
-
 # load_model_dir = args.modeldir[0] #'./saved_models/vgg19/003/'
 # load_model_name = args.model[0] #'10_18push0.7822.pth'
 load_model_dir = args.modeldir #'./saved_models/vgg19/003/'
+
 load_model_name = args.model #'10_18push0.7822.pth'
 
 #if load_model_dir[-1] == '/':
