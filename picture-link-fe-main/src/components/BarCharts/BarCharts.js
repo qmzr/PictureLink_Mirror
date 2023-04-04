@@ -37,10 +37,9 @@ function AxisLeft({ scale }) {
   return <g ref={ref} />;
 }
 
-function Bars({ data, height, scaleX, scaleY }) {
+function Bars({ data, height, scaleX, scaleY, onClick }) {
   const colors  = schemeCategory10
 
-  console.log(colors, 'colorscolors')
   return (
     <>
       {data.map(({ value, label }, index) => (
@@ -51,6 +50,7 @@ function Bars({ data, height, scaleX, scaleY }) {
           width={scaleX.bandwidth()}
           height={height - scaleY(value)}
           fill="teal"
+          onClick={() => onClick(index)}
 
           {
            ...(index === 0) && { fill: '#1BAA76'}
@@ -65,11 +65,12 @@ function Bars({ data, height, scaleX, scaleY }) {
   );
 }
 
-export function BarChart() {
+export function BarChart({onClick}) {
   const data = Data.top_10_classes.map(top10 => ({
     label: `Class ${top10.class_number}`,
-    value: top10.score,
+    value: Math.round(top10.probability * 100)
   }))
+
   const margin = { top: 10, right: 0, bottom: 20, left: 30 };
   const width = 570 - margin.left - margin.right;
   const height = 300 - margin.top - margin.bottom;
@@ -82,8 +83,6 @@ export function BarChart() {
     .domain(extent(data.map(d => d.value)))
     .range([height, 0]);
 
-    console.log(data, extent(data.map(d => d.value)), 'extentextentextent')
-
   return (
     <svg
       width={width + margin.left + margin.right}
@@ -91,7 +90,7 @@ export function BarChart() {
     >
       <g transform={`translate(${margin.left}, ${margin.top})`}>
         <AxisBottom scale={scaleX} transform={`translate(0, ${height})`} />
-        <Bars data={data} height={height} scaleX={scaleX} scaleY={scaleY} />
+        <Bars data={data} height={height} scaleX={scaleX} scaleY={scaleY} onClick={onClick} />
       </g>
     </svg>
   );
