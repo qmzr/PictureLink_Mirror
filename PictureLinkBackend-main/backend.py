@@ -193,18 +193,6 @@ for i in range(10):
 
 jsonDict["top_10_classes"] = classListDict
 # jsonDict["original_image"] = {"original_image_path": folderPath + directories[0] + "/original_img.png"}
-<<<<<<< HEAD
-jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10]}
-jsonDict["path"] = {"url": "picture-link-be/PictureLinkBackend-main/theImages/vgg19/005/50_19push0.1070.pth/",
-					"top-prototypes": {"folder": "most_activated_prototypes/",
-									   "name_of_file": "top-X_activated_prototype_in_original_pimg.png"},
-			        "reasoning":{
-			            "folder": "top-X_class_prototypes",
-			            "original_image": "most_highly_activated_patch_in_original_img_by_top-X_prototype.png",
-			            "protorype_image": "top-X_activated_prototype_in_original_pimg.png"
-			        },
-			        "resized_original_image":"original_img.png"}
-=======
 
 tempDictList = []
 for i in range(len(coordianteOriginal)):
@@ -227,7 +215,6 @@ jsonDict["number_of_classes"] = "200"
 jsonDict["number_of_training_images"] = "5792"
 jsonDict["number_of_patches"] = "10"
 
->>>>>>> db6060895a11314bf91874e12ba1994c901714af
 import json
 jsonStr = json.dumps(jsonDict)
 
