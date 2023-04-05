@@ -8,20 +8,23 @@ import { Container,
   ImageTitle,
   Content,
  } from "./RankedPrototypes.style";
- import Response from '../../response.json'
+//  import Response from '../../response.json'
+ import { observer } from "mobx-react-lite";
+ import {store} from "../../store.js"
+
 
 
  console.log(Response, 'ResponseResponseResponse')
+export const RankedPrototypes = observer((props) => {
+  const top_10_prototypes = (store.uploadResponse?.top_10_prototypes || [])
 
-
-export function RankedPrototypes(props){
   const { onItemClick } = props;
  return (
    <Container>
     <h4>Ranked Prototoypes</h4>
     <Content>
       {
-        Response.top_10_prototypes.map((top10, index) => {
+        top_10_prototypes.map((top10, index) => {
           return <RankedPrototype
             src='images/image-1.png'
             data={top10}
@@ -79,4 +82,4 @@ export function RankedPrototypes(props){
       </ImageWrapper> */}
    </Container>
  )
-}
+})

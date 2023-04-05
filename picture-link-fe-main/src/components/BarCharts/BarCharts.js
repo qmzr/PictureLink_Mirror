@@ -13,7 +13,7 @@ import {
 
 import Data from '../../response.json'
 
-function AxisBottom({ scale, transform }) {
+function AxisBottom ({ scale, transform }) {
   const ref = useRef(null);
 
   useEffect(() => {

@@ -7,26 +7,28 @@ import {
   ImageTotalScore,
   Marker,
  } from "./ImageDetails.style";
- import Response from '../../response.json'
+import { observer } from "mobx-react-lite";
+import { store } from "../../store";
 
 
-export function ImageDetails(props){
+export const ImageDetails = observer((props) => {
  const { src, aspectRatio, coordinates, selectedItem } = props;
 
  const ref = useRef()
+ const top_10_class = (store.uploadResponse?.top_10_classes || [])
 
  const selectedCoordinate = selectedItem >= coordinates.length ? null : (coordinates || [])[selectedItem]
 
  return (
    <Container aspectRatio={aspectRatio}>
     <Content>
-      <ImageClass>{Response.top_10_classes[0].class_number}: {Response.top_10_classes[0].class_name}</ImageClass>
-      <ImageTotalScore valid={true}>Total Score: <span>{Response.top_10_classes[0].logit}</span></ImageTotalScore>
-      <ImageTotalScore valid={false}>Confidence: <span>{Response.top_10_classes[0].probability}%</span></ImageTotalScore>
+      <ImageClass>{top_10_class[0]?.class_number}: {top_10_class[0]?.class_name}</ImageClass>
+      <ImageTotalScore valid={true}>Total Score: <span>{top_10_class[0]?.logit}</span></ImageTotalScore>
+      <ImageTotalScore valid={false}>Confidence: <span>{top_10_class[0]?.probability}%</span></ImageTotalScore>
     </Content>
 
 
-    <ImagePreview src={src} ref={ref}>
+    <ImagePreview src={store.uploadResponse?.resized_original_image || src} ref={ref}>
       {
         selectedCoordinate &&  <Marker
           left={selectedCoordinate[2]}
@@ -51,4 +53,4 @@ export function ImageDetails(props){
     </ImagePreview>
    </Container>
  )
-}
+})

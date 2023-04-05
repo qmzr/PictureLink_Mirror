@@ -1,11 +1,12 @@
 import { ImagePreview } from "../ImagePreview/ImagePreview";
 import { Container, Score, TotalScore, ImageWrapper, Row } from "./ScorePrediction.style";
+import { observer } from "mobx-react-lite";
+import {store} from "../../store.js"
 
-
-import Response from '../../response.json'
-export function ScorePrediction(props){
+export const ScorePrediction = observer((props) => {
   const { selectedBar } = props
-  const top_10_class = Response.top_10_classes[selectedBar] || {}
+  const top_10_class = (store.uploadResponse?.top_10_classes || [])[selectedBar]
+  // const top_10_class = store.uploadResponse?.top_10_classes[selectedBar] || {}
   const payload = top_10_class?.prototypes?.map((data, index) => {
     return {
       prototype: data,
@@ -46,4 +47,4 @@ export function ScorePrediction(props){
       </ImageWrapper>
    </Container>
  )
-}
+})
