@@ -2,7 +2,7 @@ import subprocess
 import sys
 import os
 # Specify the path to the file you want to delete
-file_path_to_remove = "./theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+file_path_to_remove = "../picture-link-fe-main/public/theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
 
 # Check if the file exists before deleting it
 if os.path.exists(file_path_to_remove):
@@ -17,7 +17,7 @@ originalImageDirectory = sys.argv[1]
 originalImageName = sys.argv[2]
 
 ImgPath = ""
-LogPath = "../theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+LogPath = "../picture-link-fe-main/public/theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
 subprocess.call(['python3', 'local_analysis.py', '-imgdir', originalImageDirectory, '-img', originalImageName])
 
 lines = []
