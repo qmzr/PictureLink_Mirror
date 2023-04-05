@@ -75,13 +75,13 @@ app.post("/image", upload.single('image'),function(req, res){
       .json(response);
     });
 
-    command.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
-      });
+    // command.stdout.on('data', (data) => {
+    //     console.log(`stdout: ${data}`);
+    //   });
 
-      command.stderr.on('data', (data) => {
-        console.error(`command stderr: ${data}`);
-      });
+    //   command.stderr.on('data', (data) => {
+    //     console.error(`command stderr: ${data}`);
+    //   });
 
     // var response = readJson(PATH2JSON);
 
