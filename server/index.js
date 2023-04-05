@@ -47,7 +47,7 @@ app.post("/image", upload.single('image'),function(req, res){
  const tempPath = req.file.path,
  file = `testImage${extention}`;
  console.log(`file: ${file}`)
- const targetPath = path.join('../theImages', file);
+ const targetPath = path.join('../picture-link-fe-main/public/theImages', file);
   if (extention.toLowerCase() === ".png" ||
       extention.toLowerCase() === ".jpg" ||
       extention.toLowerCase() === ".jpeg" ||
