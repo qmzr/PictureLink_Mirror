@@ -17,7 +17,7 @@ app = express(),
 const PATH2JSON = "../PictureLinkBackend-main/backendJSON.json";
 
 function handleError(err,res){
-    
+
     console.log(`Error: ${err}`);
 
     res
@@ -47,15 +47,17 @@ app.post("/image", upload.single('image'),function(req, res){
  const tempPath = req.file.path,
  file = `testImage${extention}`;
  console.log(`file: ${file}`)
- const targetPath = path.join('../PictureLinkBackend-main/theImages', file);
+ const targetPath = path.join('../theImages', file);
   if (extention.toLowerCase() === ".png" ||
       extention.toLowerCase() === ".jpg" ||
       extention.toLowerCase() === ".jpeg" ||
       extention.toLowerCase() === ".gif") {
 
     fs.rename(tempPath, targetPath, err => {
-      if (err) return handleError(err, res);
-
+      if (err){
+        console.log("random")
+        return handleError(err, res);
+      }
     });
 
     const command = exec(`./backend.sh ${file}`);
@@ -72,7 +74,7 @@ app.post("/image", upload.single('image'),function(req, res){
       .contentType("text/plain")
       .json(response);
     });
-  
+
     command.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
       });
@@ -82,10 +84,13 @@ app.post("/image", upload.single('image'),function(req, res){
       });
 
 
-    
+
   } else {
     fs.unlink(tempPath, err => {
-      if (err) return handleError(err, res);
+      if (err){
+        console.log("bottom error")
+        return handleError(err, res);
+      }
     });
   }
 
