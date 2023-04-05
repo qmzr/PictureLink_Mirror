@@ -1,5 +1,7 @@
 import { useRef } from 'react'
 import { Container, UploadDescription, UploadIcon, UploadText } from './upload.style'
+import { store } from '../../store.js'
+// import { PostImageResponse } from '../../PostImageResponse';
 
 export function Upload(props){
   const { onChange } = props;
@@ -11,14 +13,7 @@ export function Upload(props){
 
     // upload to backend
     onChange(e.target.files[0])
-    fetch("http://localhost:8080/image", {
-      method: 'POST',
-      body: form,
-      headers: new Headers({
-      }),
-    })
-    .then(()=> {})
-    
+    store.postImageResponse(form)
   }
 
   return(

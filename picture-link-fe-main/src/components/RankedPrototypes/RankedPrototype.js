@@ -12,7 +12,6 @@ import {
 export function RankedPrototype(props) {
 
   const { onClick, data, src, rankIndex } = props
-  const fixed_protoype = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <ImageWrapper onClick={onClick}>
       <ImagePreview src={data.prototype_image} />

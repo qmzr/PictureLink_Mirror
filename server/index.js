@@ -17,7 +17,7 @@ app = express(),
 const PATH2JSON = "../PictureLinkBackend-main/backendJSON.json";
 
 function handleError(err,res){
-    
+
     console.log(`Error: ${err}`);
 
     res
@@ -47,45 +47,56 @@ app.post("/image", upload.single('image'),function(req, res){
  const tempPath = req.file.path,
  file = `testImage${extention}`;
  console.log(`file: ${file}`)
- const targetPath = path.join('../PictureLinkBackend-main/theImages', file);
+ const targetPath = path.join('../theImages', file);
   if (extention.toLowerCase() === ".png" ||
       extention.toLowerCase() === ".jpg" ||
       extention.toLowerCase() === ".jpeg" ||
       extention.toLowerCase() === ".gif") {
 
     fs.rename(tempPath, targetPath, err => {
-      if (err) return handleError(err, res);
-
+      if (err){
+        console.log("random")
+        return handleError(err, res);
+      }
     });
 
-    const command = exec(`./backend.sh ${file}`);
+    // const command = exec(`./backend.sh ${file}`);
 
-    command.on('exit', (code) => {
-      console.log(`child process exited with code ${code}`);
+    // command.on('exit', (code) => {
+    //   console.log(`child process exited with code ${code}`);
 
 
-     var response = readJson(PATH2JSON);
+    //  var response = readJson(PATH2JSON);
+
+    //  console.log(`RESPONSE:  \n  ${JSON.stringify(response)}`);
+    //   res
+    //   .status(200)
+    //   .contentType("text/plain")
+    //   .json(response);
+    // });
+
+    // command.stdout.on('data', (data) => {
+    //     console.log(`stdout: ${data}`);
+    //   });
+
+    //   command.stderr.on('data', (data) => {
+    //     console.error(`command stderr: ${data}`);
+    //   });
+
+    var response = readJson(PATH2JSON);
 
      console.log(`RESPONSE:  \n  ${JSON.stringify(response)}`);
       res
       .status(200)
       .contentType("text/plain")
       .json(response);
-    });
-  
-    command.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
-      });
 
-      command.stderr.on('data', (data) => {
-        console.error(`command stderr: ${data}`);
-      });
-
-
-    
   } else {
     fs.unlink(tempPath, err => {
-      if (err) return handleError(err, res);
+      if (err){
+        console.log("bottom error")
+        return handleError(err, res);
+      }
     });
   }
 
