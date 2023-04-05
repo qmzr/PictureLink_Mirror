@@ -11,8 +11,9 @@ import {
   schemeCategory10
 } from "d3";
 
-import Data from '../../response.json'
-
+import { observer } from "mobx-react-lite";
+import {store} from "../../store.js"
+// export const ImageDetails = observer((props) => {
 function AxisBottom ({ scale, transform }) {
   const ref = useRef(null);
 
@@ -42,7 +43,7 @@ function Bars({ data, height, scaleX, scaleY, onClick }) {
 
   return (
     <>
-      {data.map(({ value, label }, index) => (
+      {data?.map(({ value, label }, index) => (
         <rect
           key={`bar-${label}`}
           x={scaleX(label)}
@@ -65,22 +66,25 @@ function Bars({ data, height, scaleX, scaleY, onClick }) {
   );
 }
 
-export function BarChart({onClick}) {
-  const data = Data.top_10_classes.map(top10 => ({
+export const BarChart = observer(function ({onClick}) {
+  const data = store?.uploadResponse?.top_10_classes || []
+  const neda = data?.map(top10 => ({
     label: `Class ${top10.class_number}`,
     value: Math.round(top10.probability * 100)
   }))
+  // console.log('data:: ', data)
+  // return data
 
   const margin = { top: 10, right: 0, bottom: 20, left: 30 };
   const width = 570 - margin.left - margin.right;
   const height = 300 - margin.top - margin.bottom;
 
   const scaleX = scaleBand()
-    .domain(data.map(({ label }) => label))
+    .domain(neda?.map(({ label }) => label))
     .range([0, width])
     .padding(0.5);
   const scaleY = scaleLinear()
-    .domain(extent(data.map(d => d.value)))
+    .domain(extent(neda?.map(d => d.value)))
     .range([height, 0]);
 
   return (
@@ -90,8 +94,8 @@ export function BarChart({onClick}) {
     >
       <g transform={`translate(${margin.left}, ${margin.top})`}>
         <AxisBottom scale={scaleX} transform={`translate(0, ${height})`} />
-        <Bars data={data} height={height} scaleX={scaleX} scaleY={scaleY} onClick={onClick} />
+        <Bars data={neda} height={height} scaleX={scaleX} scaleY={scaleY} onClick={onClick} />
       </g>
     </svg>
   );
-}
+})

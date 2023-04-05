@@ -17,7 +17,6 @@ import { Container,
  console.log(Response, 'ResponseResponseResponse')
 export const RankedPrototypes = observer((props) => {
   const top_10_prototypes = (store.uploadResponse?.top_10_prototypes || [])
-
   const { onItemClick } = props;
  return (
    <Container>
