@@ -103,7 +103,7 @@ result = softmax(logitsList)
 # print (len(result))
 # print (len(sortedClassNumbers))
 for i in range(len(sortedClassNumbers)):
-	classDict[sortedClassNumbers[i]][3] = result[i] 
+	classDict[sortedClassNumbers[i]][3] = result[i]
 
 
 
@@ -112,7 +112,7 @@ import os
 
 #'top-20_class_prototypes'
 
-folderPath = './theImages/vgg19/005/'
+folderPath = '../picture-link-fe-main/public/theImages/vgg19/005/'
 directories = [name for name in os.listdir(folderPath) if os.path.isdir(os.path.join(folderPath, name))]
 
 for i in range(1, 11):
@@ -167,7 +167,7 @@ for j in range(len(sortedClassNumbers)):
 	interiorDict["probability"] = round(classDict[i][3] * 100, 0)
 	interiorDict["prototypes"] = classDict[i][4]
 	interiorDict["testImagePatches"] = classDict[i][5]
-	
+
 	# interiorDict["logit"] = round(classDict[i][2],2)
 	# interiorDict["probability"] = round(classDict[i][3] * 100, 2)
 	# interiorDict["images"] = classDict[i][4]
@@ -220,8 +220,8 @@ jsonDict["top_10_classes"] = classListDict
 
 tempDictList = []
 for i in range(len(coordianteOriginal)):
-	tempDictList.append({"coordinates": coordianteOriginal[i], "prototype_image": top10PrototypeAddress[i], "classNumber": ls1[i], "score": ls2[i], 
-		"className": (nameDict[str(int(ls1[i]))]).replace("_", " ")})
+	tempDictList.append({"coordinates": coordianteOriginal[i], "prototype_image": top10PrototypeAddress[i], "classNumber": ls1[i], "score": ls2[i],
+		"className": (nameDict[str(int(ls1[i]+1))]).replace("_", " ")})
 
 jsonDict["top_10_prototypes"] = tempDictList
 # jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10], "top_10_prototype_images":top10PrototypeAddress}
