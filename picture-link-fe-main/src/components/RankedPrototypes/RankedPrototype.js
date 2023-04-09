@@ -1,13 +1,5 @@
 import { ImagePreview } from "../ImagePreview/ImagePreview";
-import {
-  ImageClass,
-  ImageScore,
-  ImageName,
-  ImagePrediction,
-  ImageWrapper,
-  DetailsTable,
-  ScoreValue,
- } from "./RankedPrototypes.style";
+import { ImageWrapper, DetailsTable, ScoreValue } from "./RankedPrototypes.style";
 
 export function RankedPrototype(props) {
 
@@ -31,10 +23,6 @@ export function RankedPrototype(props) {
           <td>{data.score}</td>
         </tr>
       </DetailsTable>
-      {/* <ImageClass>Class 10: Red Bellied Woodpecker</ImageClass>
-      <ImageName>Red Headed</ImageName>
-      <ImageScore>Total Score: 32.7%</ImageScore>
-      <ImagePrediction>Confidence: 15%</ImagePrediction> */}
     </ImageWrapper>
   )
 }
