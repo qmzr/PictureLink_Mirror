@@ -16,7 +16,6 @@ export const ImageDetails = observer((props) => {
 
  const ref = useRef()
  const top_10_class = (store.uploadResponse?.top_10_classes || [])
- console.log(top_10_class, "This is the new response:")
  const selectedCoordinate = selectedItem >= coordinates.length ? null : (coordinates || [])[selectedItem]
 
  return (
@@ -41,7 +40,6 @@ export const ImageDetails = observer((props) => {
 
       {
         (src && coordinates && !selectedCoordinate) && (coordinates || []).map(coordinate => {
-          {console.log(coordinate, 'coordinatecoordinatecoordinate')}
           return <Marker
             left={coordinate[2]}
             top={coordinate[0]}
