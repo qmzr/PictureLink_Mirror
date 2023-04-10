@@ -2,7 +2,19 @@ import subprocess
 import sys
 import os
 # Specify the path to the file you want to delete
-file_path_to_remove = "../picture-link-fe-main/public/theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+
+
+
+
+startPath = "../../"
+
+originalImageDirectory = sys.argv[1]
+originalImageName = sys.argv[2]
+
+
+
+# file_path_to_remove = "../picture-link-fe-main/public/theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+file_path_to_remove = originalImageDirectory + "/vgg19/005/50_19push0.1070.pth/local_analysis.log"
 
 # Check if the file exists before deleting it
 if os.path.exists(file_path_to_remove):
@@ -11,16 +23,15 @@ if os.path.exists(file_path_to_remove):
 else:
     print(f"File '{file_path_to_remove}' does not exist.")
 
-startPath = "../../"
 
-originalImageDirectory = sys.argv[1]
-originalImageName = sys.argv[2]
 
 ImgPath = ""
-LogPath = "../picture-link-fe-main/public/theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+# LogPath = "../picture-link-fe-main/public/theImages/vgg19/005/50_19push0.1070.pth/local_analysis.log"
+LogPath = originalImageDirectory + "/vgg19/005/50_19push0.1070.pth/local_analysis.log"
 subprocess.call(['python3', 'local_analysis.py', '-imgdir', originalImageDirectory, '-img', originalImageName])
 
 lines = []
+
 # Read the log file to extract the information
 with open(LogPath, 'r') as f:
     lines = [line.rstrip() for line in f]
