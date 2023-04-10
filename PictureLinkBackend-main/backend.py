@@ -221,7 +221,7 @@ jsonDict["top_10_classes"] = classListDict
 tempDictList = []
 for i in range(len(coordianteOriginal)):
 	tempDictList.append({"coordinates": coordianteOriginal[i], "prototype_image": top10PrototypeAddress[i], "classNumber": ls1[i], "score": ls2[i], 
-		"className": (nameDict[str(int(ls1[i]))]).replace("_", " ")})
+		"className": (nameDict[str(int(ls1[i]) + 1)]).replace("_", " ")})
 
 jsonDict["top_10_prototypes"] = tempDictList
 # jsonDict["top_10_prototypes"] = {"coordinates":coordianteOriginal[:10], "top_10_prototype_images":top10PrototypeAddress}
