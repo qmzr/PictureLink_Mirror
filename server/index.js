@@ -14,7 +14,7 @@ app = express(),
 // Basically i don't need to send the image file. All i need to send is the url to where the image exists on the internet. This would mean that a server or cloud database would have to host it. and
 // the server would send it there.
 
-const PATH2JSON = "../PictureLinkBackend-main/backendJSON.json";
+
 
 function handleError(err,res){
 
@@ -43,7 +43,7 @@ app.get("/", function(req, res){
     res.send("Hello, world!");
 });
 
-app.get("/popular-small-bird.jpg", function(req, res){
+app.get("/Red-bellied_Woodpecker-27527.jpg", function(req, res){
   const filename = req.path;
   console.log(filename);
   res.sendFile(`${__dirname}/${filename}`);
@@ -55,6 +55,9 @@ app.post("/image", upload.single('image'),function(req, res){
  const extention = path.extname(req.file.originalname);
  const tempPath = req.file.path,
  file = `testImage${extention}`;
+
+ const PATH2JSON = "../PictureLinkBackend-main/backendJSON.json";
+ 
  console.log(`file: ${file}`)
  const targetPath = path.join('../theImages', file);
   if (extention.toLowerCase() === ".png" ||
