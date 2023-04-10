@@ -2,4 +2,5 @@
 server/practice/
 ./*/.DS_Store 
 **/.DS_Store 
-
+**/theImages/
+picture-link-fe-main/public/theImages/

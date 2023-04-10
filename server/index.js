@@ -35,9 +35,18 @@ function readJson(path){
 const formData = new FormData();
 
 app.use(cors());
+
+app.use(express.static('images'));
+
 var port = 8080
 app.get("/", function(req, res){
     res.send("Hello, world!");
+});
+
+app.get("/popular-small-bird.jpg", function(req, res){
+  const filename = req.path;
+  console.log(filename);
+  res.sendFile(`${__dirname}/${filename}`);
 });
 
 app.post("/image", upload.single('image'),function(req, res){
@@ -59,6 +68,8 @@ app.post("/image", upload.single('image'),function(req, res){
         return handleError(err, res);
       }
     });
+
+    // Send Base64
 
     const command = exec(`./backend.sh ${file}`);
 

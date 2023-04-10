@@ -15,6 +15,8 @@ import { Container,
 
 export const RankedPrototypes = observer((props) => {
   const top_10_prototypes = (store.uploadResponse?.top_10_prototypes || [])
+  console.log(top_10_prototypes, "These are the list of prototypes.")
+  console.log(store.uploadResponse?.top_10_classes , "These are the list of prototypes.")
 
   const { onItemClick } = props;
  return (

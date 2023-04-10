@@ -75,7 +75,8 @@ function Bars({ data, height, scaleX, scaleY, onClick }) {
 
 export const BarChart = observer(function ({onClick}) {
  const top_10_classes = store?.uploadResponse?.top_10_classes || []
- console.log(top_10_classes, "top_10_classes");
+ console.log(top_10_classes, "BARCHART: top_10_classes");
+ console.log(store.uploadResponse?.top_10_prototypes , "BARCHART: These are the list of top 10 prototypes.")
  const neda = top_10_classes?.map(top10 => ({
    label: `Class ${top10.class_number}`,
    value: Math.round(top10.probability * 100)
