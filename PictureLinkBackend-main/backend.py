@@ -6,7 +6,9 @@ import os
 
 
 
-startPath = "../../"
+# startPath = "../../"
+startPath = "http://localhost:8080/"
+
 
 originalImageDirectory = sys.argv[1]
 originalImageName = sys.argv[2]
