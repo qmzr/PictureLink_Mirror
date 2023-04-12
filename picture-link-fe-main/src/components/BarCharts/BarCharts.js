@@ -77,23 +77,22 @@ export const BarChart = observer(function ({onClick}) {
  const top_10_classes = store?.uploadResponse?.top_10_classes || []
  console.log(top_10_classes, "BARCHART: top_10_classes");
  console.log(store.uploadResponse?.top_10_prototypes , "BARCHART: These are the list of top 10 prototypes.")
- const neda = top_10_classes?.map(top10 => ({
+ const labelAndValues = top_10_classes?.map(top10 => ({
    label: `Class ${top10.class_number}`,
-   value: Math.round(top10.probability * 100)
+   value: Math.round(top10.probability)
  }))
- // console.log('data:: ', data)
- // return data
 
- const margin = { top: 10, right: 0, bottom: 20, left: 30 };
+
+ const margin = { top: 10, right: 0, bottom: 20, left: 40 };
  const width = 570 - margin.left - margin.right;
  const height = 300 - margin.top - margin.bottom;
 
  const scaleX = scaleBand()
-   .domain(neda?.map(({ label }) => label))
+   .domain(labelAndValues?.map(({ label }) => label))
    .range([0, width])
    .padding(0.5);
  const scaleY = scaleLinear()
-   .domain(extent(neda?.map(d => d.value)))
+   .domain([0, Math.max(...labelAndValues?.map(({ value }) => value))])
    .range([height, 0]);
 
 
@@ -104,7 +103,8 @@ export const BarChart = observer(function ({onClick}) {
    >
      <g transform={`translate(${margin.left}, ${margin.top})`}>
        <AxisBottom scale={scaleX} transform={`translate(0, ${height})`} />
-       <Bars data={neda} height={height} scaleX={scaleX} scaleY={scaleY} onClick={onClick} />
+       <AxisLeft scale={scaleY} transform={`translate(0, ${height})`} />
+       <Bars data={labelAndValues} height={height} scaleX={scaleX} scaleY={scaleY} onClick={onClick} />
      </g>
    </svg>
  );
