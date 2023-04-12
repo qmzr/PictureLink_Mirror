@@ -21,19 +21,24 @@ export const RankedPrototypes = observer((props) => {
   const { onItemClick } = props;
  return (
    <Container>
-    <h4>Ranked Prototoypes</h4>
-    <Content>
-      {
-        top_10_prototypes.map((top10, index) => {
-          return <RankedPrototype
-            src='images/image-1.png'
-            data={top10}
-            rankIndex={index}
-            onClick={() => onItemClick(index)}
-          />
-        })
-      }
-    </Content>
+    { store.status === "loading" && (<img class="center-image" src="/images/Loading_icon.gif" alt="loading ......"/>)}
+    {store.status === "complete" && (
+      <span>
+        <h4>Ranked Prototoypes</h4>
+        <Content>
+          {
+            top_10_prototypes.map((top10, index) => {
+              return <RankedPrototype
+                src='images/image-1.png'
+                data={top10}
+                rankIndex={index}
+                onClick={() => onItemClick(index)}
+              />
+            })
+          }
+        </Content>
+      </span>
+    )}
   </Container>
  )
 })

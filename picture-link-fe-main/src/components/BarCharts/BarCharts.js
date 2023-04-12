@@ -12,6 +12,7 @@ import {
 
 import { observer } from "mobx-react-lite";
 import {store} from "../../store.js"
+import { Container } from "./BarChart.style.js";
 function AxisBottom ({ scale, transform }) {
  const ref = useRef(null);
 
@@ -97,16 +98,21 @@ export const BarChart = observer(function ({onClick}) {
 
 
  return (
-   <svg
-     width={width + margin.left + margin.right}
-     height={height + margin.top + margin.bottom}
-   >
-     <g transform={`translate(${margin.left}, ${margin.top})`}>
-       <AxisBottom scale={scaleX} transform={`translate(0, ${height})`} />
-       <AxisLeft scale={scaleY} transform={`translate(0, ${height})`} />
-       <Bars data={labelAndValues} height={height} scaleX={scaleX} scaleY={scaleY} onClick={onClick} />
-     </g>
+  <Container>
+  { store.status === "loading" && (<img class="center-image" src="/images/Loading_icon.gif" alt="loading ......"/>)}
+  { store.status === "complete" && (
+    <svg
+      width={width + margin.left + margin.right}
+      height={height + margin.top + margin.bottom}
+    >
+    <g transform={`translate(${margin.left}, ${margin.top})`}>
+      <AxisBottom scale={scaleX} transform={`translate(0, ${height})`} />
+      <AxisLeft scale={scaleY} transform={`translate(0, ${height})`} />
+      <Bars data={labelAndValues} height={height} scaleX={scaleX} scaleY={scaleY} onClick={onClick} />
+    </g>
    </svg>
+  )}
+  </Container>
  );
 })
 

@@ -18,33 +18,38 @@ export const ScorePrediction = observer((props) => {
   })
  return (
    <Container>
-    <h4>{payload && payload[0].class_name}</h4>
-      <ImageWrapper>
+    {store.status === "loading" && (<img class="center-image" src="/images/Loading_icon.gif" alt="loading ......"/>)}
+    {store.status === "complete" && (
+      <span>
+        <h4>{payload && payload[0].class_name}</h4>
+        <ImageWrapper>
+          <Row>
+            <div> Test Image</div>
+            <div> Prototype Image</div>
+            <div> Similarity Score</div>
+          </Row>
+          { payload?.map((data, index) =>(
+          <Row>
+            <ImagePreview src={data?.test_image_patch} />
+            <ImagePreview src={data?.prototype} />
+            <Score> {data?.score} </Score>
+          </Row>
+          ))
+        }
         <Row>
-          <div> Test Image</div>
-          <div> Prototype Image</div>
-          <div> Similarity Score</div>
+        <div>.</div>
+            <div>.</div>
+            <div>.</div>
+            <div>.</div>
+            <div>.</div>
+            <div>.</div>
+            <div> </div>
+            <div>Total points to {payload && payload[0].class_name}</div>
+            <div><b>{payload && payload[0].total_class_score}</b></div>
         </Row>
-        { payload?.map((data, index) =>(
-        <Row>
-          <ImagePreview src={data?.test_image_patch} />
-          <ImagePreview src={data?.prototype} />
-          <Score> {data?.score} </Score>
-        </Row>
-        ))
-      }
-      <Row>
-       <div>.</div>
-          <div>.</div>
-          <div>.</div>
-          <div>.</div>
-          <div>.</div>
-          <div>.</div>
-          <div> </div>
-          <div>Total points to {payload && payload[0].class_name}</div>
-          <div><b>{payload && payload[0].total_class_score}</b></div>
-      </Row>
-      </ImageWrapper>
+        </ImageWrapper>
+      </span>
+    )}
    </Container>
  )
 })
